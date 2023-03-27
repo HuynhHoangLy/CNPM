@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* font-family: 'Poppins', sans-serif; */
+    --height-nav: 70px;
+    --width-nav: 17vw;
+}
+
+body {
+    background-color: #fff;
+}
+
+.dashboard {
+    position: relative;
+    height: calc(100vh - var(--height-nav) - 1vh);
+    top: -2.5vh;
+    width: var(--width-nav);
+    border-radius: 30px;
+    border: 1.6px solid rgba(0, 0, 0, 0.14);
+}
+
+table.table {
+    border-collapse: collapse;
+}
+
+tr, th, td {
+    height: 10vh;
+    border-bottom: solid rgba(0, 0, 0, 0.14);
+}
+
+tr.profileOctagon, tr.groupP, tr.delete, tr.truck{
+    width: 1vw;
+    padding: 10px 2px;
+    cursor: pointer;
+}
+
+tr.profileOctagon:hover {
+    color: #F6C445;
+}
+
+tr.groupP:hover {
+    color: #9AC1F0;
+}
+
+tr.delete:hover {
+    color: #A0E548;
+}
+
+tr.truck:hover {
+    color: #BD9E84;
+}
+
+th img {
+    margin-left: 1vw;
+    margin-right: 2.5vw;
+}
+
+td {
+    font-family: none;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+#first_icon {
+    padding-top: 20px;
+}
+
+#final_icon {
+    padding-bottom: 0.05vh;
+    padding-left: 0.5vw;
+}
+
+#manage_account {
+    padding-top: 2.6vh;
+}
+
+#manage_employee {
+    padding-bottom: 0.6vh;
+}
+
+#manage_route {
+
+}
+
+#manage_vehicle {
+    padding-top: 0.2vh;
+}
+

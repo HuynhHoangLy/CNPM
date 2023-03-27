@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-family: 'Poppins', sans-serif; */
+    --height-nav: 70px;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* Header section */
+
+#header {
+    width: 100vw;
+    height: var(--height-nav);
+    left: 0px;
+    top: 0px;
+    background: #FFF;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    z-index: 10;
+    border-radius: 10px;
+    border: 1.6px solid rgba(0, 0, 0, 0.14);
+}
+
+#header li {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#header .header-left {
+}
+
+.text-logo {
+    margin: 0 10px;
+    text-decoration: none;
+    line-height: var(--height-nav);
+    position: absolute;
+}
+
+.text-logo em {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: normal;
+    color: #000;
+}
+
+.logo {
+    width: 60px;
+    margin: 0px;
+}
+
+.logo img {
+    height: var(--height-nav) - 30px;
+    width: 45px;
+    margin-top: 9px;
+    margin-left: 20px;
+}
+
+.text-logo .text-logo-1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.text-logo .text-logo-2 {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #E45F2B;
+}
+
+#header .header-right .icon{
+    position: absolute;
+    right: 4vw;
+    font-size: 2.3rem;
+    line-height: var(--height-nav);
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+}
+
+.icon-home, .icon-mess, .icon-bell, .avatar, .info_account {
+    position: relative;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.icon-home, .icon-mess, .icon-bell {
+    position: relative;
+    top: 8px;
+    background-color: rgb(228, 230, 235);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.icon-home:hover, .icon-mess:hover, .icon-bell:hover {
+    background-color: rgba(68, 73, 80, 0.15);
+}
+
+.icon-home i {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.icon-mess i {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 11px;
+    left: 12px;
+}
+
+.icon-bell i {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 11px;
+    left: 13px;
+}
+
+.avatar img {
+    position: fixed;
+    height: var(--height-nav) - 30px;
+    width: 45px;
+    margin-top: 10px;
+}
+
+.info_account {
+    font-size: 16px;
+    left: 3vw;
+    cursor: default;
+}
+ .name {
+    position: relative;
+    text-transform: none;
+    font-weight: bold;
+    top: -1.5vh;
+ }
+
+ .position {
+    color: #E45F2B;
+    position: relative;
+    text-transform: none;
+    top: -8.5vh;
+ }
