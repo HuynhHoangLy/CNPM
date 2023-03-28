@@ -14,9 +14,10 @@ body {
 }
 
 .dashboard {
+    display: inline-block;
+    margin-top: 100px;
     position: relative;
     height: calc(100vh - var(--height-nav) - 1vh);
-    top: -2.5vh;
     width: var(--width-nav);
     border-radius: 30px;
     border: 1.6px solid rgba(0, 0, 0, 0.14);

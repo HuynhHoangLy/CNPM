@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-rout
 import Header from "./components/Header/Header";
 import './App.css';
 import Dashboard from "./components/Dashboard/Dashboard";
-import OSmap from "./features/Map/OSmap";
-import InfoFeatures from "./features/Info";
+import ManageAccount from "./features/ManageAccount/ManageAccount";
 
 function App() {
 
@@ -19,9 +18,8 @@ function App() {
     // </BrowserRouter>
     <div>
       <Header/>
-      <InfoFeatures/>
-      <Dashboard/>
-      <OSmap/>
+      <Dashboard/>  
+      <ManageAccount/>
     </div>
   );
 }
