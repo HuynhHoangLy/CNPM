@@ -15,7 +15,7 @@ body {
 
 .dashboard {
     display: inline-block;
-    margin-top: 100px;
+    margin-top: 10.2vh;
     position: relative;
     height: calc(100vh - var(--height-nav) - 1vh);
     width: var(--width-nav);
@@ -27,15 +27,30 @@ table.table {
     border-collapse: collapse;
 }
 
+#none {
+    text-decoration: none;
+    color: #000;
+}
+
 tr, th, td {
     height: 10vh;
-    border-bottom: solid rgba(0, 0, 0, 0.14);
 }
 
 tr.profileOctagon, tr.groupP, tr.delete, tr.truck{
     width: 1vw;
     padding: 10px 2px;
     cursor: pointer;
+    position: relative;
+    border-bottom: solid rgba(0, 0, 0, 0.14);
+}
+
+tr.profileOctagon {
+    bottom: 1.5vh;
+}
+
+tr.truck {
+    top: 0.4vh;
+    left: -1vh;
 }
 
 tr.profileOctagon:hover {
@@ -57,6 +72,8 @@ tr.truck:hover {
 th img {
     margin-left: 1vw;
     margin-right: 2.5vw;
+    position: relative;
+    top: 2vh;
 }
 
 td {
@@ -75,18 +92,21 @@ td {
 }
 
 #manage_account {
-    padding-top: 2.6vh;
+    position: relative;
+    top: 0.2vh;
+    width: 11vw;
 }
 
 #manage_employee {
-    padding-bottom: 0.6vh;
+    width: 11vw;
 }
 
 #manage_route {
-
+    position: relative;
+    bottom: 0.8vh;
 }
 
 #manage_vehicle {
-    padding-top: 0.2vh;
+    position: relative;
+    bottom: 0.4vh;
 }
-

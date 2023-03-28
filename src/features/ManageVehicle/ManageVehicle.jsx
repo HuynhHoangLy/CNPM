@@ -3,56 +3,56 @@ import './styles.css'
 
 
 function ManageAccount() {
-  const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'EMAIL', 'Thao tác']
+  const heads = ['Mã số xe', 'Tên Collector', 'Đang chứa', 'Sức chứa', 'Tình trạng', 'Thao tác']
   const datas = [
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Now': "15",
+      'Capacity': "30",
+      'Status': "Đang hoạt động"
     },
   ]
 
@@ -65,13 +65,13 @@ function ManageAccount() {
           </tr>
         </thead>
         <tbody>
-          {datas.map((data, index) =>
+        {datas.map((data, index) =>
             <tr className='' key={index}>
               <th>{data.ID}</th>
               <th>{data.Name}</th>
-              <th>{data.Role}</th>
-              <th>{data.Phone}</th>
-              <th>{data.Email}</th>
+              <th>{data.Now}</th>
+              <th>{data.Capacity}</th>
+              <th>{data.Status}</th>
               <th>
                 <div className='table-operation'>
                   <div className='detail-button'>Chi tiết</div>

@@ -1,7 +1,8 @@
 .tableM {
-  width: 1200px;
+  /* width: 1200px; */
   height: calc(100vh - var(--height-nav) - 1vh);
   margin-left: 20px;
+  width: 80vw;
 }
 
 .table-operation {

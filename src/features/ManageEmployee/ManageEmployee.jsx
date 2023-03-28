@@ -3,56 +3,56 @@ import './styles.css'
 
 
 function ManageAccount() {
-  const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'EMAIL', 'Thao tác']
+  const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'Tình trạng', 'Thao tác']
   const datas = [
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Role': "Collector",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Đã giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Role': "Collector",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Chưa giao việc"
+    },
+    {
+      'ID': "1234",
+      'Name': "Nguyen van A",
+      'Role': "Janitor",
+      'Phone': "0912121212",
+      'Status': "Chưa giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Role': "Collector",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Đã giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Role': "Collector",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Đã giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
+      'Role': "Janitor",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Chưa giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
-      'Role': "Collector",
+      'Role': "Janitor",
       'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
-    },
-    {
-      'ID': "1234",
-      'Name': "Nguyen van A",
-      'Role': "Collector",
-      'Phone': "0912121212",
-      'Email': "VanA@gmail.com"
+      'Status': "Đã giao việc"
     },
   ]
 
@@ -71,7 +71,7 @@ function ManageAccount() {
               <th>{data.Name}</th>
               <th>{data.Role}</th>
               <th>{data.Phone}</th>
-              <th>{data.Email}</th>
+              <th>{data.Status}</th>
               <th>
                 <div className='table-operation'>
                   <div className='detail-button'>Chi tiết</div>

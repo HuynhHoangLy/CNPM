@@ -1,25 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-router-dom';
-import Header from "./components/Header/Header";
+import TodoFeatures from "./features";
 import './App.css';
-import Dashboard from "./components/Dashboard/Dashboard";
-import ManageAccount from "./features/ManageAccount/ManageAccount";
+import Info from "./features/Info/components/Info/Info";
+
 
 function App() {
 
   return (
-    // <BrowserRouter>
-    //     <Header/>
-    //     <Routes>
-    //       <Route path="/" exact element = {<Intial/>} />
-    //       <Route path = "/homepage" element = {<Homepage/>} />
-    //       <Route path = "*" element = {<Error/>} />
-    //     </Routes>
-    // </BrowserRouter>
     <div>
-      <Header/>
-      <Dashboard/>  
-      <ManageAccount/>
+      <TodoFeatures/>
     </div>
   );
 }

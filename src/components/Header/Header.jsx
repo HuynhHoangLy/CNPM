@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css'
 import image from './picture/image.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -8,10 +9,10 @@ function Header() {
             <ul>
                 <li className="header-left">
                     <em className="logo"><img src="logo.png" alt="Not found" /></em>
-                    <a href = "" className="text-logo">
+                    <Link to = "/" className="text-logo">
                         <em className="text-logo-1">UWC</em>
                         <em className="text-logo-2">2.0</em>
-                    </a>
+                    </Link>
                 </li>
                 <li className="header-right">
                     <div className='icon'>
