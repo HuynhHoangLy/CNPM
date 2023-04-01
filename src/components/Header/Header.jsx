@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import './styles.css'
 import image from './picture/image.png';
 import { Link } from 'react-router-dom';
 
 function Header() {
+
+    let check = useContext(0);
+
     return (
         <header id="header">
             <ul>
                 <li className="header-left">
                     <em className="logo"><img src="logo.png" alt="Not found" /></em>
-                    <Link to = "/" className="text-logo">
+                    <Link to = "/" className="text-logo" onClick={() => {
+
+                    }}>
                         <em className="text-logo-1">UWC</em>
                         <em className="text-logo-2">2.0</em>
                     </Link>
                 </li>
                 <li className="header-right">
                     <div className='icon'>
-                        <a className="icon-home">
+                        <Link to = '/' className="icon-home text-logo">
                             <i className="fa-sharp fa-solid fa-house" />
-                        </a>
+                        </Link>
                         <a className="icon-mess">
                             <i className="fa-brands fa-facebook-messenger"/>
                         </a>

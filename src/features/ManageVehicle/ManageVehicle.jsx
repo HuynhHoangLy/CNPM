@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css'
 
 
-function ManageAccount() {
+function ManageVehicle() {
   const heads = ['Mã số xe', 'Tên Collector', 'Đang chứa', 'Sức chứa', 'Tình trạng', 'Thao tác']
   const datas = [
     {
@@ -24,21 +24,21 @@ function ManageAccount() {
       'Name': "Nguyen van A",
       'Now': "15",
       'Capacity': "30",
-      'Status': "Đang hoạt động"
+      'Status': "Chưa giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Now': "15",
       'Capacity': "30",
-      'Status': "Đang hoạt động"
+      'Status': "Chưa giao việc"
     },
     {
       'ID': "1234",
       'Name': "Nguyen van A",
       'Now': "15",
       'Capacity': "30",
-      'Status': "Đang hoạt động"
+      'Status': "Chưa giao việc"
     },
     {
       'ID': "1234",
@@ -71,7 +71,7 @@ function ManageAccount() {
               <th>{data.Name}</th>
               <th>{data.Now}</th>
               <th>{data.Capacity}</th>
-              <th>{data.Status}</th>
+              {data.Status === 'Đang hoạt động' ? <th className='completed'>{data.Status}</th> : <th className='uncompleted'>{data.Status}</th>}
               <th>
                 <div className='table-operation'>
                   <div className='detail-button'>Chi tiết</div>
@@ -86,4 +86,4 @@ function ManageAccount() {
   );
 }
 
-export default ManageAccount;
+export default ManageVehicle;

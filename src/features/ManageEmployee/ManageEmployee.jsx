@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles.css'
+import './styles.css';
 
 
-function ManageAccount() {
+function ManageEmployee() {
   const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'Tình trạng', 'Thao tác']
   const datas = [
     {
@@ -71,11 +71,11 @@ function ManageAccount() {
               <th>{data.Name}</th>
               <th>{data.Role}</th>
               <th>{data.Phone}</th>
-              <th>{data.Status}</th>
+              {data.Status === 'Đã giao việc' ? <th className='completed'>{data.Status}</th> : <th className='uncompleted'>{data.Status}</th>}
               <th>
                 <div className='table-operation'>
-                  <div className='detail-button'>Chi tiết</div>
-                  <div className='delete-button'>Xóa</div>
+                  <div className='detail-button'>Giao việc</div>
+                  <div className='delete-button'>Hủy việc</div>
                 </div>
               </th>
             </tr>
@@ -86,4 +86,4 @@ function ManageAccount() {
   );
 }
 
-export default ManageAccount;
+export default ManageEmployee;

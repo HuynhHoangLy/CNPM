@@ -34,6 +34,7 @@ table.table {
 
 tr, th, td {
     height: 10vh;
+    position: relative;
 }
 
 tr.profileOctagon, tr.groupP, tr.delete, tr.truck{
@@ -109,4 +110,17 @@ td {
 #manage_vehicle {
     position: relative;
     bottom: 0.4vh;
+}
+
+.bgColor {
+    background-color: rgba(68, 73, 80, 0.15);
+}
+
+.non {
+    background-color: none;
+}
+
+#first_bg {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
 }

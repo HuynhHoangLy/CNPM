@@ -15,7 +15,7 @@
 }
 
 .detail-button {
-  background-color: #0a7bed;
+  background-color: #7D8EC4;
   color: #333;
   width: 80px;
   height: 32px;
@@ -32,4 +32,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.completed {
+  color: #4CAF50;
+}
+
+.uncompleted {
+  color: #FF3D00;
 }
