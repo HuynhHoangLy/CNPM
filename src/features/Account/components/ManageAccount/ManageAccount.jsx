@@ -57,7 +57,7 @@ function ManageAccount() {
   ]
 
   return (
-    <div style={{display: "inline-block"}}>
+    <div style={{display: "inline-block"}} id='info_size'>
       <table className='tableM'>
         <thead>
           <tr className='head-title'>
