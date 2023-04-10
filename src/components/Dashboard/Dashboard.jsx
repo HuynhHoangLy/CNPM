@@ -54,7 +54,7 @@ function Dashboard() {
                         </tr>
                     </div>
                 </Link>
-                <Link to='/collectroute' id='none'>
+                <Link to='/collect' id='none'>
                     <div onClick={() => {
                         changeBackgroundcolor(3);
                     }} 

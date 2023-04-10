@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.css'
+import './styles.css';
+import logo from '../picture/logo.png';
 
 CreateAccount.propTypes = {
     
@@ -12,7 +13,7 @@ function CreateAccount(props) {
             <div className='create_content'>{'QUẢN LÝ TÀI KHOẢN   >  TẠO TÀI KHOẢN'}</div>
             <div className='border_create'>
                <div className='header-left_mini'>
-                    <em className='logo_mini'><img src='logo.png' alt='Not found'/></em>
+                    <em className='logo_mini'><img src={logo} alt='Not found'/></em>
                     <div className='text-logo-mini'>
                          <em className='text-logo-1-mini'>UWC</em>
                          <em className='text-logo-2-mini'>2.0</em>

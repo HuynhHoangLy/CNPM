@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-AssignCollectionRoute.propTypes = {
+InfoVehicle.propTypes = {
     
 };
 
-function AssignCollectionRoute(props) {
+function InfoVehicle(props) {
     return (
         <div>
             
@@ -13,4 +13,4 @@ function AssignCollectionRoute(props) {
     );
 }
 
-export default AssignCollectionRoute;
+export default InfoVehicle;

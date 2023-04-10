@@ -1,6 +1,7 @@
 import React, { Component, useContext } from 'react';
 import './styles.css'
 import image from './picture/image.png';
+import logo from './picture/logo.png';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -11,7 +12,7 @@ function Header() {
         <header id="header">
             <ul>
                 <li className="header-left">
-                    <em className="logo"><img src="logo.png" alt="Not found" /></em>
+                    <em className="logo"><img src={logo} alt="Not found" /></em>
                     <Link to = "/" className="text-logo" onClick={() => {
 
                     }}>
