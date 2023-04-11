@@ -15,7 +15,7 @@ function TodoEmployee(props) {
     return (
         <div>
             <Header/>
-            <Dashboard/>
+            <Dashboard initBackground={2}/>
             <Routes>
                 <Route path='/' exact element = {<ManageEmployee/>}/>
                 <Route path='/manage' exact element = {<ManageEmployee/>}/>

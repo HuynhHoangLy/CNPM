@@ -16,7 +16,7 @@ function TodoAccount(props) {
     return (
         <div>
             <Header/>
-            <Dashboard/>
+            <Dashboard initBackground={1}/>
             <Routes>
                 <Route path='/' exact element = {<ManageAccount/>} />
                 <Route path='/manage' exact element = {<ManageAccount/>}/>

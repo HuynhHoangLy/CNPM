@@ -15,7 +15,7 @@ function TodoVehicle(props) {
     return (
         <div>
             <Header/>
-            <Dashboard/>
+            <Dashboard initBackground={4}/>
             <Routes>
                 <Route path='/' exact element = {<MananageVihicle/>}/>
                 <Route path='/manage' element = {<MananageVihicle/>}/>
