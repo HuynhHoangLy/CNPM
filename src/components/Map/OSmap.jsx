@@ -11,7 +11,7 @@ const markerIcon = new L.Icon({
     popupAnchor: [0,-46],
 })
 
-export default function OSmap(props) {
+export default function OSmap({Map}) {
 
     let mapRef = useRef();
     //let data = props.dataFromParent;

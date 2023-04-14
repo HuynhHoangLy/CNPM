@@ -46,7 +46,7 @@ function CreateAccount(props) {
                               </select>
                          </li>
                     </ul>
-                    <button type='submit' id='submit'>Tạo tài khoản</button>
+                    <button type='submit' className='submit'>Tạo tài khoản</button>
                </form> 
             </div>
         </div>

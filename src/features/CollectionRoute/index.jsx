@@ -13,7 +13,7 @@ function ManageCollectionRoute(props) {
     return (
         <div>
             <Header/>
-            <Dashboard initBackground={3}/>
+            <Dashboard initBackground={0}/>
             <InfoFeatures/>
             <OSmap/>
         </div>

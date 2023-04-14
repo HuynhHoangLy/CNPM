@@ -31,7 +31,7 @@
 }
 
 .logo_mini img{
-    height: 30px;
+    height: 40px;
     width: auto;
     padding-right: 14px;
     position: relative;
@@ -41,10 +41,10 @@
 .text-logo-mini {
     width: 7vw;
     display: inline-block;
-    font-size: 30px;
 }
 
 .text-logo-mini em {
+    font-size: 30px;
     font-style: normal;
     padding-right: 8px;
     font-weight: 700;
@@ -58,7 +58,7 @@
     padding-left: 1.8vw;
 }
 
-.Hoten, .Namsinh, .Email, .Password, .Job {
+.Hoten, .Namsinh, .Email, .Password, .Job, .ID {
     list-style-type: none;
     padding-bottom: 2vh;
 }
@@ -67,7 +67,7 @@ li label {
     color: #50544A;
 }
 
-#name, #year_born, #email, #job, #password {
+#name, #year_born, #email, #job, #password, #id_number {
     position: relative;
     display: block;
     margin-top: 0.7vh;
@@ -78,8 +78,8 @@ li label {
     border: 1.6px solid rgba(0, 0, 0, 0.14);
 }
 
-#submit {
-    margin-top: 3vh;
+.submit {
+    margin-top: 2vh;
     margin-left: 7vw;
     height: 4vh;
     width: 10vw;
@@ -90,7 +90,7 @@ li label {
     border: 1.6px solid rgba(0, 0, 0, 0.14);
 }
 
-#submit:hover {
+.submit:hover {
     box-shadow: 2px 2px 2px #AAA;
     cursor: pointer;
 }

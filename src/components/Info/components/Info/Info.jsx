@@ -5,6 +5,7 @@ import location from '../picture/Location.png'
 import location_cross from '../picture/Location Cross.png'
 import coll_worked from '../picture/Profile Accepted 2.png'
 import jan_worked from '../picture/Group 1.png'
+import { Link } from 'react-router-dom';
 
 Info.propTypes = {
     
@@ -35,18 +36,18 @@ function Info({info}) {
             </div> 
         )
         if (index == 3) return (
-            <div className='info_coll_worked'>
+            <Link className='info_coll_worked'>
                 <div className='info_icon'>{icon(info.id)}</div>
                 <p className='info_content' id='info_content_coll'>{info.content}</p>
                 <p className='info_script' id='info_script_coll'>{info.script}</p>
-            </div> 
+            </Link> 
         )
         return (
-            <div className='info_jan_worked'>
+            <Link className='info_jan_worked'>
                 <div className='info_icon'>{icon(info.id)}</div>
                 <p className='info_content' id='info_content_jan'>{info.content}</p>
                 <p className='info_script' id='info_script_jan'>{info.script}</p>
-            </div> 
+            </Link> 
         )
     }
      
