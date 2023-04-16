@@ -36,18 +36,18 @@ function Info({info}) {
             </div> 
         )
         if (index == 3) return (
-            <Link className='info_coll_worked'>
+            <div className='info_coll_worked'>
                 <div className='info_icon'>{icon(info.id)}</div>
                 <p className='info_content' id='info_content_coll'>{info.content}</p>
                 <p className='info_script' id='info_script_coll'>{info.script}</p>
-            </Link> 
+            </div> 
         )
         return (
-            <Link className='info_jan_worked'>
+            <div className='info_jan_worked'>
                 <div className='info_icon'>{icon(info.id)}</div>
                 <p className='info_content' id='info_content_jan'>{info.content}</p>
                 <p className='info_script' id='info_script_jan'>{info.script}</p>
-            </Link> 
+            </div> 
         )
     }
      
