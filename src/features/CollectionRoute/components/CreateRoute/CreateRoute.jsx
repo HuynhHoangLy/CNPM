@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function CreateRoute() {
   const heads = ['Thứ tự', 'ID', 'Thao tác']
-  const [mcp, setMCP] = useState([
+  const [mcps, setMCPs] = useState([
     {
       'ID': "02",
     },
