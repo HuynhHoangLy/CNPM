@@ -10,7 +10,7 @@
     border: 1.6px solid rgba(0, 0, 0, 0.14);
     height: 53vh;
     width: 40vw;
-    top: 15vh;
+    top: 12vh;
     left: 18vw;
     box-shadow: 5px 5px 5px #AAA;
 }
@@ -18,10 +18,13 @@
 .header-mini {
     position: relative;
     width: 27vw;
-    font-size: 25px;
+    top: 9vh;
+    left: 31.7vw;
+}
+
+.header-mini p {
+    font-size: 23px;
     font-weight: bold;
-    top: 12vh;
-    left: 32vw;
 }
 
 .width_info {
@@ -36,7 +39,7 @@
 
 .right_info {
     position: relative;
-    top: -23.8vh;
+    top: -26.4vh;
     right: -23vw;
     width: 20vw;
 }
@@ -50,7 +53,7 @@
     font-weight: 700;
     border: 1.6px solid rgba(0, 0, 0, 0.14);
     text-align: center;
-    top: -17vh;
+    top: -22vh;
     left: 14.4vw;
     background-color: #D65E5E;
 }
@@ -66,7 +69,7 @@
 
 .change_info {
     position: relative;
-    top: -23vh;
+    top: -26vh;
     left: 7.3vw;
 }
 

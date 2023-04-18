@@ -21,7 +21,7 @@ function InfoVehicle(props) {
             )
         }
         return (
-            <div className='change_info' style={{top: '-20vh'}}>
+            <div className='change_info' style={{top: '-24vh'}}>
                 <button type='submit' className='submit' id='submit'>Lưu thay đổi</button>
                 <button type='submit' className='submit' id='submit' onClick={() => {
                         setCheck(1-check)

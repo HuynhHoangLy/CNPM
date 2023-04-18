@@ -7,7 +7,7 @@
 .create_content {
     position: relative;
     font-size: 20px;
-    top: 2.5vh;
+    top: 1vh;
     color: #D65E5E;
     font-weight: bold;
 }
@@ -18,7 +18,7 @@
     border: 1.6px solid rgba(0, 0, 0, 0.14);
     height: 69vh;
     width: 27vw;
-    top: 8vh;
+    top: 6vh;
     left: 23vw;
     box-shadow: 5px 5px 5px #AAA;
 }
@@ -26,8 +26,8 @@
 .header-left_mini {
     width: 27vw;
     margin-left: 8vw;
-    margin-top: 3vh;
-    margin-bottom: 4vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
 }
 
 .logo_mini img{

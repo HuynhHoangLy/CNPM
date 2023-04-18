@@ -59,9 +59,9 @@ function ManageAccount() {
   return (
     <div style={{display: "inline-block"}} id='info_size'>
       <table className='tableM'>
-        <thead>
+        <thead id='head-manage'>
           <tr className='head-title'>
-            {heads.map((head, headID) => <th key={headID} >{head}</th>)}
+            {heads.map((head, headID) => <th key={headID}>{head}</th>)}
           </tr>
         </thead>
         <tbody>

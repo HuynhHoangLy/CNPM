@@ -6,6 +6,7 @@ import TodoAccount from './Account/index';
 import TodoEmployee from './Employee/index';
 import TodoVehicle from './Vehicle/index';
 import TodoError from './Error/index';
+import Chat from '../components/Chat/Chat';
 
 
 TodoFeatures.propTypes = {
@@ -20,6 +21,7 @@ function TodoFeatures(props) {
                 <Route path = "/account/*" element = {<TodoAccount/>} />
                 <Route path='/employee/*' element = {<TodoEmployee/>}></Route>
                 <Route path='/route/*'></Route>
+                <Route path = '/chat' element = {<Chat/>}/>
                 <Route path='/vehicle/*' element = {<TodoVehicle/>}></Route>
                 <Route path = "/*" element = {<TodoError/>} />
             </Routes>
