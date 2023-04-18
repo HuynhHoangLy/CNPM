@@ -16,7 +16,8 @@ function TodoFeatures(props) {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" exact element = {<CollectionRoute/>} />
+            <Route path='/' element = {<TodoEmployee/>}></Route>
+                <Route path="/collect/*" exact element = {<CollectionRoute/>} />
                 <Route path = "/account/*" element = {<TodoAccount/>} />
                 <Route path='/employee/*' element = {<TodoEmployee/>}></Route>
                 <Route path='/route/*'></Route>
