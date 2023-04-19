@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { PlusCircleIcon } from '@heroicons/react/24/solid';
+import { PlusCircleIcon, ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 
 function ManageRoute() {
@@ -60,6 +60,9 @@ function ManageRoute() {
           )}
         </tbody>
       </table>
+      <div className='manage-table-navigation-flexbox'>
+          
+      </div>
       </div>
       
     </div>

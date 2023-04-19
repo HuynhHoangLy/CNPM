@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {MapContainer, TileLayer, Map, useMap, Marker, Popup, Polyline} from 'react-leaflet'
+import {MapContainer, TileLayer, Map, useMap, Marker, Popup, Polyline, } from 'react-leaflet'
 import L from 'leaflet';
 import 'leaflet-routing-machine';
 import { useRef } from 'react';
@@ -12,7 +12,21 @@ const markerIcon = new L.Icon({
     popupAnchor: [0,-46],
 })
 
-export default function OSmap({points}) {
+export const markerIconRed = new L.Icon({
+    iconUrl: require("./picture/location-pin-normal.png"),
+    iconSize: [35,40],
+    iconAnchor: [17,46],
+    popupAnchor: [0,-46],
+})
+
+export const markerIconRedBold = new L.Icon({
+    iconUrl: require("./picture/location-pin-bold.png"),
+    iconSize: [35,40],
+    iconAnchor: [17,46],
+    popupAnchor: [0,-46],
+})
+
+export default function OSmap({points, children}) {
 
     const [map, setMap] = useState(null);
     const [routingControl, setRoutingControl] = useState(null);
@@ -70,6 +84,7 @@ export default function OSmap({points}) {
             {
                 points != undefined ? points.map((point) => <Marker position={point}/>): <></>
             }
+            {children}
             {routingControl && <Polyline positions={routingControl._line._route._coordinates}/>}          
         </MapContainer>
     )

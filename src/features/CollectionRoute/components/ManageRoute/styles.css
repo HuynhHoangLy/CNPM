@@ -55,3 +55,12 @@
     flex-direction: row;
     justify-content: flex-end;
   }
+
+  .manage-table-navigation-flexbox{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }

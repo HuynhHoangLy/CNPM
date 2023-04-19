@@ -4,42 +4,40 @@ import { CheckCircleIcon, PlusCircleIcon, MapIcon,ChevronDoubleDownIcon, Chevron
 import { Link } from 'react-router-dom';
 import OSmap from '../../../../components/Map/OSmap';
 import { useState } from 'react';
-
-function CreateRoute() {
-  const heads = ['Thứ tự', 'ID', 'Thao tác']
-  const [mcps, setMCPs] = useState([
-    {
-      'ID': "02"
-    },
-    {
-      'ID': "03"
-    },
-    {
-      'ID': "04"
-    },
-    null,
-    null
-  ]);
+import { getMCP } from '../..';
+import { markerIconRed } from '../../../../components/Map/OSmap';
+import { Marker } from 'react-leaflet';
+function CreateRoute({value, setvalue}) {
+  const heads = ['Thứ tự', 'ID', 'Thao tác'];
+  const [mcps, setMCPs] = useState(value != [] ? value.map((ele) => {return getMCP(ele)}): []);
 
   const handleDelete = (index) => {
-    let temp = mcps.map((ele) => {return ele});
-    temp.splice(index,1)
-    temp.push(null)
-    setMCPs(temp);
+    // let temp1 = mcps.map((ele) => {return ele});
+    let temp2 = value.map((ele)=> ele);
+    // temp1.splice(index,1);
+    temp2.splice(index,1);
+    // setMCPs(temp1);
+    setvalue(temp2);
   }
 
   const handleMoveUp = (index) => {
     if(index == 0) return;
-    let temp = mcps.map((ele) => {return ele});
-    [temp[index-1], temp[index]] = [temp[index], temp[index-1]]
-    setMCPs(temp);
+    // let temp1 = mcps.map((ele) => {return ele});
+    let temp2 = value.map((ele)=> {return ele});
+    // [temp1[index-1], temp1[index]] = [temp1[index], temp1[index-1]]
+    [temp2[index-1], temp2[index]] = [temp2[index], temp2[index-1]]
+    // setMCPs(temp1);
+    setvalue(temp2);
   }
 
   const handleMoveDown = (index) => {
     if(index == mcps.length-1 || mcps[index+1] == null) return;
-    let temp = mcps.map((ele) => {return ele});
-    [temp[index+1], temp[index]] = [temp[index], temp[index+1]]
-    setMCPs(temp);
+    // let temp1 = mcps.map((ele) => {return ele});
+    let temp2 = value.map((ele)=> ele);
+    // [temp1[index+1], temp1[index]] = [temp1[index], temp1[index+1]]
+    [temp2[index+1], temp2[index]] = [temp2[index], temp2[index+1]]
+    // setMCPs(temp1);
+    setvalue(temp2);
   }
 
   return (
@@ -59,17 +57,17 @@ function CreateRoute() {
                  Thêm MCP
             </Link>
         </div>
-      <table className='create-table-mcp'>
+      <table className='create-table-mcp' style={{height: (mcps.length+1)*40 + 'px'}}>
         <thead>
           <tr className='create-head-title'>
             {heads.map((head, headID) => <th key={headID} >{head}</th>)}
           </tr>
         </thead>
         <tbody style={{backgroundColor: '#f6f6f6'}}>
-          {mcps.map((data, index) =>
+          {value.map((data, index) =>
             <tr className='' key={index}>
-              <th style={{width: '15%'}}>{(data === null ? null : index+1)}</th>
-              <th style={{width: '15%'}}>{(data === null ? null : data.ID)}</th>
+              <th style={{width: '15%'}}>{index+1}</th>
+              <th style={{width: '15%'}}>{getMCP(data).ID}</th>
               <th style={{width: '70%'}} >
                 { data === null ? null :
                 <div className='create-table-operation-flexbox'>
@@ -94,7 +92,13 @@ function CreateRoute() {
         </tbody>
       </table>
       <div className='create-map-flexbox'>
-        <OSmap/>
+        <OSmap>
+        {
+                value != [] ? value.map((mcp, index) => 
+                <Marker id={index} icon={markerIconRed} position={mcp}></Marker>
+                ): <></>
+        }
+        </OSmap>
       </div>
 
       </div>
