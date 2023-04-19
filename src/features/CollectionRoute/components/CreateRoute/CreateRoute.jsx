@@ -9,17 +9,38 @@ function CreateRoute() {
   const heads = ['Thứ tự', 'ID', 'Thao tác']
   const [mcps, setMCPs] = useState([
     {
-      'ID': "02",
+      'ID': "02"
     },
     {
-      'ID': "03",
+      'ID': "03"
     },
     {
-      'ID': "04",
+      'ID': "04"
     },
-    {},
-    {}
+    null,
+    null
   ]);
+
+  const handleDelete = (index) => {
+    let temp = mcps.map((ele) => {return ele});
+    temp.splice(index,1)
+    temp.push(null)
+    setMCPs(temp);
+  }
+
+  const handleMoveUp = (index) => {
+    if(index == 0) return;
+    let temp = mcps.map((ele) => {return ele});
+    [temp[index-1], temp[index]] = [temp[index], temp[index-1]]
+    setMCPs(temp);
+  }
+
+  const handleMoveDown = (index) => {
+    if(index == mcps.length-1 || mcps[index+1] == null) return;
+    let temp = mcps.map((ele) => {return ele});
+    [temp[index+1], temp[index]] = [temp[index], temp[index+1]]
+    setMCPs(temp);
+  }
 
   return (
     <div style={{display: 'inline-block', position: 'absolute', paddingTop: '80px', width: '85vw', marginLeft:'20px', height: '170vh'}} id='info_size'>
@@ -47,21 +68,26 @@ function CreateRoute() {
         <tbody style={{backgroundColor: '#f6f6f6'}}>
           {mcps.map((data, index) =>
             <tr className='' key={index}>
-              <th style={{width: '15%'}}>{(data === {} ? null : index+1)}</th>
-              <th style={{width: '15%'}}>{data.ID}</th>
+              <th style={{width: '15%'}}>{(data === null ? null : index+1)}</th>
+              <th style={{width: '15%'}}>{(data === null ? null : data.ID)}</th>
               <th style={{width: '70%'}} >
+                { data === null ? null :
                 <div className='create-table-operation-flexbox'>
                     <div className='create-justify-button' style={{backgroundColor: '#ffff4d'}}>Thông tin</div>
-                    <div className='create-justify-button' >
+                    <div className='create-justify-button' onClick={() => handleMoveUp(index)}>
                         <ChevronDoubleUpIcon style={{height: '70%', width: '40px', color: 'black'}}></ChevronDoubleUpIcon>
                     </div>
-                    <div className='create-justify-button'>
-                        <ChevronDoubleDownIcon style={{height: '70%', width: '40px', color: 'black'}}></ChevronDoubleDownIcon>
+                    <div className='create-justify-button' onClick={() => handleMoveDown(index)}>
+                        <ChevronDoubleDownIcon style={{height: '70%', width: '40px', color: 'black'}} ></ChevronDoubleDownIcon>
                     </div>
-                    <div className='create-justify-button' style={{background: '#eb4034'}}>
+                    <div
+                      className='create-justify-button'
+                      style={{background: '#eb4034'}}
+                      onClick={() => handleDelete(index)}>
                         <XMarkIcon style={{height: '70%', width: '40px', color: 'black'}}></XMarkIcon>
                     </div>
                 </div>
+                }
               </th>
             </tr>
           )}
