@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
-
-function ManageEmployee() {
+function ManageEmployee({users}) {
   const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'Tình trạng', 'Thao tác']
   const datas = [
     {
@@ -57,31 +57,50 @@ function ManageEmployee() {
   ]
 
   return (
-    <div style={{display: "inline-block"}}>
-      <table className='tableM'>
-        <thead>
-          <tr className='head-title'>
-            {heads.map((head, headID) => <th key={headID} >{head}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {datas.map((data, index) =>
-            <tr className='' key={index}>
-              <th>{data.ID}</th>
-              <th>{data.Name}</th>
-              <th>{data.Role}</th>
-              <th>{data.Phone}</th>
-              {data.Status === 'Đã giao việc' ? <th className='completed'>{data.Status}</th> : <th className='uncompleted'>{data.Status}</th>}
-              <th>
-                <div className='table-operation'>
-                  <div className='detail-button'>Giao việc</div>
-                  <div className='delete-button'>Hủy việc</div>
-                </div>
-              </th>
+    <div className='table_manage'>
+      <div className='header_manage'>
+        <div className='create_content' style={{paddingRight: '25.51vw'}}>{'QUẢN LÝ NHÂN VIÊN'}</div>
+        <Link to='./create' className='create_manage'>
+          <p>Lịch làm việc</p>
+        </Link>
+        <div className='sort_manage'>
+          <p>Tìm kiếm theo</p>
+        </div>
+        <div className='search_manage'>
+          <p>Search</p>
+        </div>
+      </div>
+      <div style={{display: "inline-block"}}>
+        <table className='tableM'>
+          <thead>
+            <tr className='head-title'>
+              <th className='head'>Mã nhân viên</th>
+              <th className='head'>Tên</th>
+              <th className='head'>Vai trò</th>
+              <th className='head' style={{width: '200px'}}>Số điện thoại</th>
+              <th className='head'>Tình trạng</th>
+              <th>Thao tác</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((data, index) =>
+              <tr className='' key={index}>
+                <th className='dataID'>{data.id}</th>
+                <th className='dataName'>{data.name}</th>
+                <th className='dataRole'>{data.fCollector === 1 ? 'Collector' : 'Janitor'}</th>
+                <th className='dataPhone'>{data.phone}</th>
+                {Math.random() < 0.5 ? <th className='completed'>{'Đã giao việc'}</th> : <th className='uncompleted'>{'Chưa giao việc'}</th>}
+                <th>
+                  <div className='table-operation'>
+                    <div className='detail-button'>Giao việc</div>
+                    <div className='delete-button'>Hủy việc</div>
+                  </div>
+                </th>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

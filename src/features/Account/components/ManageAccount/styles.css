@@ -1,13 +1,14 @@
 .tableM {
-  /* width: 1200px; */
+  width: 1200px;
   height: calc(100vh - var(--height-nav) - 1vh);
-  margin-left: 20px;
-  width: 80vw;
+  margin-left: 10px;
+  /* width: 80vw; */
 }
 
 .table-operation {
   display: flex;
   justify-content: space-around;
+  margin-left: -40px;  
 }
 
 .head-title {
@@ -15,6 +16,7 @@
 }
 
 .detail-button {
+  margin-left: 50px;
   background-color: #7D8EC4;
   color: #333;
   width: 80px;
@@ -32,4 +34,94 @@
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.head-title th {
+  padding-left: 20px;
+}
+
+.dataID {
+  padding-left: 70px;
+}
+
+.dataName {
+  position: relative;
+  left: 15px;
+}
+
+.dataRole {
+  padding-left: 20px;
+}
+
+.dataPhone {
+  padding-left: 25px;
+}
+
+.dataEmail {
+  padding-left: 0px;
+}
+
+.header_manage {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4vh;
+}
+
+.create_content, .create_manage, .sort_manage, .search_manage {
+  display: inline-block;
+}
+
+.create_manage, .sort_manage, .search_manage {
+  margin: 0 1vw;
+  height: 5vh;
+  margin-top: 1vh;
+  position: relative;
+  top: 0.5vh;
+  border-radius: 5px;
+  border: 1.6px solid #AECEEB;
+}
+
+.create_manage {
+  background-color: rgb(236, 106, 82, 65%);
+  border: 1.6px solid rgba(0, 0, 0, 0.14);
+  text-decoration: none;
+  color: #333;
+  width: 8vw;
+}
+
+.create_manage p {
+  margin-top: 0.5vh;
+  text-align: center;
+}
+
+.sort_manage {
+  top: 0.6vh;
+  width: 10vw;
+}
+
+.sort_manage p {
+  margin-top: 0.5vh; 
+  margin-left: 0.5vw;
+}
+
+.search_manage {
+  top: 0.6vh;
+  width: 15vw;
+}
+
+.search_manage p {
+  padding-top: 0.5vh;
+  margin-left: 1vw;
+}
+
+.create_content {
+  left: 1vw;
+  padding-right: 25.65vw;
+}
+
+.table_manage {
+  position: relative;
+  left: 18.7vw;
+  top: -89vh;
+  width: 1200px;
 }

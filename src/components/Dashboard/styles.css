@@ -84,33 +84,46 @@ td#manage_account, td#manage_employee, td#manage_route, td#manage_vehicle {
 }
 
 #first_icon {
-    padding-top: 20px;
+    margin-top: -30px;
+}
+
+#second_icon {
+    margin-top: -35px;
+}
+
+#third_icon {
+    margin-top: -20px;
 }
 
 #final_icon {
     padding-bottom: 0.05vh;
     padding-left: 0.5vw;
+    margin-top: -20px;
 }
 
 #manage_account {
     position: relative;
     top: 0.2vh;
     width: 12vw;
+    padding-top: 35px;
 }
 
 #manage_employee {
     width: 12vw;
+    padding-top: 25px;
 }
 
 #manage_route {
     position: relative;
     bottom: 0.8vh;
+    padding-top: 15px;
 }
 
 #manage_vehicle {
     position: relative;
     bottom: -1vh;
     width: 12vw;
+    padding-top: 15px;
 }
 
 .bgColor {

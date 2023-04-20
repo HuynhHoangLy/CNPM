@@ -60,23 +60,23 @@
 }
 
 #info_content_location {
-    left: 10vw;
-    top: -9.5vh;
+    left: 9vw;
+    top: -9vh;
 }
 
 #info_content_locross {
-    left: 11vw;
-    top: -9.5vh;
+    left: 10vw;
+    top: -9vh;
 }
 
 #info_content_coll {
     left: 10vw;
-    top: -9.5vh;
+    top: -9vh;
 }
 
 #info_content_jan {
-    left: 9.5vw;
-    top: -9.5vh;
+    left: 9vw;
+    top: -9vh;
 }
 
 .info_script {
@@ -84,8 +84,8 @@
     text-align: center;
     font-size: 1.4vw;
     width: calc(19vw - 6vw);
-    top: -10vh;
-    left: 5.5vw;
+    top: -12vh;
+    left: 4.5vw;
 }
 
 /* #info_script_location {
@@ -94,12 +94,12 @@
 
 #info_script_locross {
     top: -8.5vh;
-}
+} */
 
 #info_script_coll {
-    top: -8.5vh;
+    left: 5.3vw;
 }
 
 #info_script_jan {
-    top: -8.5vh;
-} */
+    left: 5.3vw;
+}

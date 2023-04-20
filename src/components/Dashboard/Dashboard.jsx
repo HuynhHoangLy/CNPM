@@ -7,6 +7,7 @@ import truck from './picture/truck.png';
 import { Link } from "react-router-dom";
 
 function Dashboard({initBackground}) {
+
     return (
         <div className='dashboard'>
             <table className='table'>
@@ -31,7 +32,7 @@ function Dashboard({initBackground}) {
                     >
                         <tr className='groupP'>
                             <th scope='row'>
-                                <img src={GroupP} alt=""/>
+                                <img src={GroupP} alt="" id='second_icon'/>
                             </th>
                             <td id='manage_employee'>
                                 Quản lý nhân viên 
@@ -39,12 +40,12 @@ function Dashboard({initBackground}) {
                         </tr>
                     </div>
                 </Link>
-                <Link to='/collect' id='none'>
+                <Link to='/route' id='none'>
                     <div
                     className={(initBackground == 3)?'bgColor':'nonbgColor'}>
                         <tr className='delete'>
                             <th scope='row'>
-                                <img src={Delete} alt=""/>
+                                <img src={Delete} alt="" id='third_icon'/>
                             </th>
                             <td id='manage_route'>
                                 Sắp xếp đường đi thu gom rác

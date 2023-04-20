@@ -1,87 +1,87 @@
 .info {
-    position: absolute;
-    top: 12vh;
-    left: 20vw;
+  position: absolute;
+  top: 12vh;
+  left: 20vw;
 }
 
 .border_info {
-    position: relative;
-    border-radius: 30px;
-    border: 1.6px solid rgba(0, 0, 0, 0.14);
-    height: 53vh;
-    width: 40vw;
-    top: 12vh;
-    left: 18vw;
-    box-shadow: 5px 5px 5px #AAA;
+  position: relative;
+  border-radius: 30px;
+  border: 1.6px solid rgba(0, 0, 0, 0.14);
+  height: 53vh;
+  width: 40vw;
+  top: 7vh;
+  left: 18vw;
+  box-shadow: 5px 5px 5px #AAA;
 }
 
 .header-mini {
-    position: relative;
-    width: 27vw;
-    top: 9vh;
-    left: 31.7vw;
+  position: relative;
+  width: 27vw;
+  top: 4vh;
+  left: 31.7vw;
 }
 
 .header-mini p {
-    font-size: 23px;
-    font-weight: bold;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .width_info {
-    width: 18vw;
+  width: 18vw;
 }
 
 .left_info {
-    position: relative;
-    top: 4vh;
-    left: 2vw;
+  position: relative;
+  top: 4vh;
+  left: 2vw;
 }
 
 .right_info {
-    position: relative;
-    top: -26.4vh;
-    right: -23vw;
-    width: 20vw;
+  position: relative;
+  top: -28.4vh;
+  right: -23vw;
+  width: 20vw;
 }
 
 .edit_info {
-    position: relative;
-    height: 4vh;
-    width: 10vw;
-    border-radius: 10px;
-    font-size: 17px;
-    font-weight: 700;
-    border: 1.6px solid rgba(0, 0, 0, 0.14);
-    text-align: center;
-    top: -22vh;
-    left: 14.4vw;
-    background-color: #D65E5E;
+  position: relative;
+  height: 4vh;
+  width: 10vw;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.6px solid rgba(0, 0, 0, 0.14);
+  text-align: center;
+  top: -24vh;
+  left: 15.4vw;
+  background-color: #D65E5E;
 }
 
 .edit_info:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .edit_info p {
-    position: relative;
-    top: 0.4vh;
+  position: relative;
+  top: 0.4vh;
 }
 
 .change_info {
-    position: relative;
-    top: -26vh;
-    left: 7.3vw;
+  position: relative;
+  top: -29vh;
+  left: 7.3vw;
 }
 
 .final_submit {
-    position: relative;
-    top: 8vh;
-    left: -16.5vw;
-    border-radius: 30px;
+  position: relative;
+  top: 8vh;
+  left: -16.5vw;
+  border-radius: 30px;
 }
 
 #submit {
-    margin-top: 3vh;
-    width: 8vw;
-    margin-left: 3vw;
+  margin-top: 3vh;
+  width: 8vw;
+  margin-left: 3vw;
 }

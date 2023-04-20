@@ -26,7 +26,7 @@
 .header-left_mini {
     width: 27vw;
     margin-left: 8vw;
-    margin-top: 1vh;
+    margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
@@ -35,7 +35,7 @@
     width: auto;
     padding-right: 14px;
     position: relative;
-    top: 5px;
+    top: -5px;
 }
 
 .text-logo-mini {
@@ -61,6 +61,7 @@
 .Hoten, .Namsinh, .Email, .Password, .Job, .ID {
     list-style-type: none;
     padding-bottom: 2vh;
+    margin-left: -3vh;
 }
 
 li label {
@@ -76,10 +77,11 @@ li label {
     background-color: #F8F8F8;
     border-radius: 5px;
     border: 1.6px solid rgba(0, 0, 0, 0.14);
+    padding-left: 10px;
 }
 
 .submit {
-    margin-top: 2vh;
+    margin-top: -1vh;
     margin-left: 7vw;
     height: 4vh;
     width: 10vw;

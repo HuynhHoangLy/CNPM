@@ -1,13 +1,13 @@
 .tableM {
-  /* width: 1200px; */
   height: calc(100vh - var(--height-nav) - 1vh);
-  margin-left: 20px;
-  width: 80vw;
+  margin-left: 10px;
+  width: 1200px;
 }
 
 .table-operation {
   display: flex;
   justify-content: space-around;
+  margin-left: -56px;  
 }
 
 .head-title {
@@ -32,4 +32,34 @@
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.completedV {
+  color: #4CAF50;
+  padding-left: 40px;
+}
+
+.uncompletedV {
+  color: #FF3D00;
+  padding-left: 30px;
+}
+
+.headV {
+  padding-left: 25px;
+}
+
+.dataIDV {
+  padding-left: 20px;
+}
+
+.dataNameV {
+  padding-left: 20px;
+}
+
+.dataNowV {
+  padding-left: 35px;
+}
+
+.dataCapacityV {
+  padding-left: 50px;
 }
