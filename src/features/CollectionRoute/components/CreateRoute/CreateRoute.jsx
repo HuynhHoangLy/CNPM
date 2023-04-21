@@ -7,36 +7,29 @@ import { useState } from 'react';
 import { getMCP } from '../..';
 import { markerIconRed } from '../../../../components/Map/OSmap';
 import { Marker } from 'react-leaflet';
+import Line from '../../../../components/Map/components/Line';
+
 function CreateRoute({value, setvalue}) {
   const heads = ['Thứ tự', 'ID', 'Thao tác'];
-  const [mcps, setMCPs] = useState(value != [] ? value.map((ele) => {return getMCP(ele)}): []);
+  const [showLine, setShowLine] = useState(false);
 
   const handleDelete = (index) => {
-    // let temp1 = mcps.map((ele) => {return ele});
     let temp2 = value.map((ele)=> ele);
-    // temp1.splice(index,1);
     temp2.splice(index,1);
-    // setMCPs(temp1);
     setvalue(temp2);
   }
 
   const handleMoveUp = (index) => {
     if(index == 0) return;
-    // let temp1 = mcps.map((ele) => {return ele});
     let temp2 = value.map((ele)=> {return ele});
-    // [temp1[index-1], temp1[index]] = [temp1[index], temp1[index-1]]
     [temp2[index-1], temp2[index]] = [temp2[index], temp2[index-1]]
-    // setMCPs(temp1);
     setvalue(temp2);
   }
 
   const handleMoveDown = (index) => {
-    if(index == mcps.length-1 || mcps[index+1] == null) return;
-    // let temp1 = mcps.map((ele) => {return ele});
+    if(index == value.length-1 || value[index+1] == null) return;
     let temp2 = value.map((ele)=> ele);
-    // [temp1[index+1], temp1[index]] = [temp1[index], temp1[index+1]]
     [temp2[index+1], temp2[index]] = [temp2[index], temp2[index+1]]
-    // setMCPs(temp1);
     setvalue(temp2);
   }
 
@@ -48,7 +41,7 @@ function CreateRoute({value, setvalue}) {
                 <CheckCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></CheckCircleIcon>
                 Xác nhận
             </Link>            
-            <Link className='create-top-button' onClick={ () => {}}>
+            <Link className='create-top-button' onClick={ () => {setShowLine(true)}}>
                 <MapIcon style={{height: '70%', width: '40px', color: 'white'}}></MapIcon>
                 Tạo Đường
             </Link>
@@ -57,7 +50,7 @@ function CreateRoute({value, setvalue}) {
                  Thêm MCP
             </Link>
         </div>
-      <table className='create-table-mcp' style={{height: (mcps.length+1)*40 + 'px'}}>
+      <table className='create-table-mcp' style={{height: (value.length+1)*40 + 'px'}}>
         <thead>
           <tr className='create-head-title'>
             {heads.map((head, headID) => <th key={headID} >{head}</th>)}
@@ -95,8 +88,13 @@ function CreateRoute({value, setvalue}) {
         <OSmap>
         {
                 value != [] ? value.map((mcp, index) => 
-                <Marker id={index} icon={markerIconRed} position={mcp}></Marker>
+                <Marker id={index} position={mcp}></Marker>
                 ): <></>
+        }
+        {
+          showLine == true ?
+          (<Line points={value} />)
+          : (<></>)
         }
         </OSmap>
       </div>
