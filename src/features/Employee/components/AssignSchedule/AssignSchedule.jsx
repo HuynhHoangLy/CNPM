@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-AssignCollectionRoute.propTypes = {
+AssignSchedule.propTypes = {
     
 };
 
-function AssignCollectionRoute(props) {
+function AssignSchedule(props) {
     return (
+
         <div>
             
         </div>
     );
 }
 
-export default AssignCollectionRoute;
+export default AssignSchedule

@@ -1,13 +1,14 @@
 .tableM {
   /* width: 1200px; */
   height: calc(100vh - var(--height-nav) - 1vh);
-  margin-left: 20px;
-  width: 80vw;
+  margin-left: 10px;
+  width: 1200px;
 }
 
 .table-operation {
   display: flex;
   justify-content: space-around;
+  margin-left: -40px;  
 }
 
 .head-title {
@@ -36,8 +37,10 @@
 
 .completed {
   color: #4CAF50;
+  padding-left: 30px;
 }
 
 .uncompleted {
   color: #FF3D00;
+  padding-left: 25px;
 }

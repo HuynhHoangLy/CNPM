@@ -17,8 +17,8 @@ body {
     display: inline-block;
     margin-top: 10.2vh;
     position: relative;
-    height: calc(100vh - var(--height-nav) - 1vh);
-    width: var(--width-nav);
+    height: calc(100vh - var(--height-nav) - 1.3vh);
+    width: calc(var(--width-nav) + 1vw);
     border-radius: 30px;
     border: 1.6px solid rgba(0, 0, 0, 0.14);
 }
@@ -77,39 +77,53 @@ th img {
     top: 2vh;
 }
 
-td {
+td#manage_account, td#manage_employee, td#manage_route, td#manage_vehicle {
     font-family: none;
     font-weight: 900;
     font-size: 18px;
 }
 
 #first_icon {
-    padding-top: 20px;
+    margin-top: -30px;
+}
+
+#second_icon {
+    margin-top: -35px;
+}
+
+#third_icon {
+    margin-top: -20px;
 }
 
 #final_icon {
     padding-bottom: 0.05vh;
     padding-left: 0.5vw;
+    margin-top: -20px;
 }
 
 #manage_account {
     position: relative;
     top: 0.2vh;
-    width: 11vw;
+    width: 12vw;
+    padding-top: 35px;
 }
 
 #manage_employee {
-    width: 11vw;
+    width: 12vw;
+    padding-top: 25px;
 }
 
 #manage_route {
     position: relative;
     bottom: 0.8vh;
+    padding-top: 15px;
 }
 
 #manage_vehicle {
     position: relative;
-    bottom: 0.4vh;
+    bottom: -1vh;
+    width: 12vw;
+    padding-top: 15px;
 }
 
 .bgColor {

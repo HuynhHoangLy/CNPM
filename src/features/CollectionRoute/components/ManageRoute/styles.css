@@ -21,11 +21,23 @@
   .head-title {
     background-color: aliceblue;
   }
+<<<<<<< HEAD
+=======
+
+  .head-title th {
+    position: relative;
+    padding-left: 3.2vw;
+  }
+>>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
   
   .justify-button {
     background-color: #7D8EC4;
     color: #333;
+<<<<<<< HEAD
     width: 80px;
+=======
+    width: 100px;
+>>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
     height: 32px;
     align-items: center;
     display: flex;
@@ -46,6 +58,10 @@
     font-size: 18px;
     color: white;
     text-decoration: none;
+<<<<<<< HEAD
+=======
+    margin-bottom: 10;
+>>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
   }
 
   .flexbox-topbutton {
@@ -54,6 +70,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+<<<<<<< HEAD
+=======
+    margin-bottom: 2vh;
+>>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
   }
 
   .manage-table-navigation-flexbox{
