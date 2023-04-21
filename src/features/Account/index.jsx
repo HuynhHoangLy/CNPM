@@ -26,8 +26,6 @@ function TodoAccount(props) {
             .catch((error) => console.log(error));
     }, []);
 
-
-
     return (
         <div>
             <Header/>

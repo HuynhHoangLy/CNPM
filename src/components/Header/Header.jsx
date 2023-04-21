@@ -25,9 +25,9 @@ function Header() {
                         <Link to = '/' className="icon-home text-logo">
                             <i className="fa-sharp fa-solid fa-house" />
                         </Link>
-                        <a className="icon-mess">
+                        <Link to = '/chat' className="icon-mess">
                             <i className="fa-brands fa-facebook-messenger"/>
-                        </a>
+                        </Link>
                         <a className="icon-bell">
                             <i className="fa-solid fa-bell"/>
                         </a>

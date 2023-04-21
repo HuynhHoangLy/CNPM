@@ -18,16 +18,9 @@ TodoRoute.propTypes = {
 export function getMCP({position}) {
     return {'ID': Math.round(Math.random()*10)};
 }
-<<<<<<< HEAD
-// export function SETMCP({value}){
-//     CHOSENMCPS = value
-// }
-
-function ManageCollectionRoute(props) {
-=======
 
 function TodoRoute(props) {
->>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
+
     const [mcpList, setMcpList] = useState([])
     return (
         <div>
@@ -41,16 +34,8 @@ function TodoRoute(props) {
                     <Route path='/manage' exact element = {<ManageRoute/>}/>
                     <Route path='/create' exact element = {<CreateRoute value={mcpList} setvalue={setMcpList}/>}/>
                     <Route path='/create/add' exact element = {<AddMCP value={mcpList} setvalue={setMcpList}/>}/>
-<<<<<<< HEAD
-                    {/* <Route path='/collection' element = {<AssignCollectionRoute/>}/> */}
                     <Route path='*' element = {<TodoError/>} />
                 </Routes>
-                {/* <InfoFeatures/> */}
-                {/* <OSmap/> */}
-=======
-                    <Route path='*' element = {<TodoError/>} />
-                </Routes>
->>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
             </div>   
         </div>
     );

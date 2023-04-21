@@ -29,24 +29,14 @@ export const markerIconRedBold = new L.Icon({
     popupAnchor: [0,-46],
 })
 
-<<<<<<< HEAD
-=======
 export let current = [10.878228, 106.806244];
 
->>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
 export default function OSmap({children}) {    
 
     let mapRef = useRef();
-    
-<<<<<<< HEAD
-    let data = [10.878228, 106.806244];
-
-    const position = [parseFloat(data[0]), parseFloat(data[1])];
-=======
 
 
     const position = [parseFloat(current[0]), parseFloat(current[1])];
->>>>>>> 050e7a250909ba4522cb7227fe2da51fc4b8dcf1
 
     return (
         <MapContainer ref = {mapRef} center={position} zoom={15} scrollWheelZoom={true} >

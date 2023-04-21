@@ -1,11 +1,22 @@
 import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import Todopagination from '../../../../components/Page/index';
+import { useState, useMemo } from 'react';
 
+let PageSize = 6;
 
 function ManageAccount({users}) {
   
   const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'EMAIL', 'Thao tác']
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return users.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage]);
 
   return (
     <div className='table_manage'>
@@ -46,6 +57,13 @@ function ManageAccount({users}) {
             )}
           </tbody>
         </table>
+        <Todopagination
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={users.length}
+          pageSize={PageSize}
+          onPageChange={page => setCurrentPage(page)}
+        />
       </div>
     </div>
   );
