@@ -30,7 +30,7 @@ function TodoFeatures(props) {
     const token = getToken();
     console.log(token)
 
-    if (!token) return (<Login setToken={setToken}/>)
+    // if (!token) return (<Login setToken={setToken}/>)
 
     return (
         <BrowserRouter>
