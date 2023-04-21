@@ -29,30 +29,15 @@ export const markerIconRedBold = new L.Icon({
     popupAnchor: [0,-46],
 })
 
+export let current = [10.878228, 106.806244];
+
 export default function OSmap({children}) {    
 
     let mapRef = useRef();
     
-    let data = [10.878228, 106.806244];
 
-    const position = [parseFloat(data[0]), parseFloat(data[1])];
 
-    const points = [
-        [10.881910, 106.804845], 
-        [10.876739, 106.802029], 
-        [10.875483, 106.799275], 
-        [10.871069, 106.802225]
-    ];
-
-    console.log(points);
-
-    useEffect(() => {
-        if (points.length > 0 && mapRef.current) {
-            const bounds = L.latLngBounds(points.map((marker) => marker.position));
-            // mapRef.current.leafletElement.invalidateSize();
-            // mapRef.current.leafletElement.fitBounds(bounds);
-        }
-    }, [points]);
+    const position = [parseFloat(current[0]), parseFloat(current[1])];
 
     return (
         <MapContainer ref = {mapRef} center={position} zoom={15} scrollWheelZoom={true} >
@@ -61,26 +46,10 @@ export default function OSmap({children}) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position = {position} center = {true}>
-                <Popup> 
+                <Popup > 
                     <b>Hello I'm here</b>
                 </Popup>
             </Marker>
-            
-            <Marker position={[10.881910, 106.804845]}/>
-            <Marker position={[10.881910, 106.804845]}/>
-            <Marker position={[10.876739, 106.802029]}/>
-            <Marker position={[10.875483, 106.799275]}/>
-            <Marker position={[10.870426, 106.795392]}/>
-            <Marker position={[10.871069, 106.802225]}/>
-            <Marker position={[10.873086, 106.807627]}/>
-            <Marker position={[10.872488, 106.789096]}/>
-            <Marker position={[10.874792, 106.778297]}/>
-            <Marker position={[10.881261, 106.783115]}/>
-            <Marker position={[10.887498, 106.799431]}/>
-            <Line points={points}/>
-            {
-                points != undefined ? points.map((point) => <Marker position={point}/>): <></>
-            }
             {children}
         </MapContainer>
     )

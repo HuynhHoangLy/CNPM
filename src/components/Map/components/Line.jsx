@@ -8,27 +8,28 @@ import './styles.css';
 Line.propTypes = {
     
 };
+let line = null;
 
 function Line({points}) {
     const map = useMap();
-    useEffect(() => {
-        L.Routing.control({
-            waypoints: points.map((p) => L.latLng(p)),
-            lineOptions: {
-                styles: [
-                    {
-                        color: '#0078FF', 
-                        weight: 6,
-                    },
-                ],
-            },
-            routeWhileDragging: false,
-            addWaypoints: false,
-            draggableWaypoints: false,
-            fitSelectedRoutes: true,
-            showAlternatives: false,
-        }).addTo(map);  
-    }, [])
+    console.log(points)
+    if(line != null) map.removeControl(line);
+    line = L.Routing.control({
+        waypoints: points.map((p) => L.latLng(p)),
+        lineOptions: {
+            styles: [
+                {
+                    color: '#0078FF', 
+                    weight: 6,
+                },
+            ],
+        },
+        routeWhileDragging: false,
+        addWaypoints: false,
+        draggableWaypoints: false,
+        fitSelectedRoutes: true,
+        showAlternatives: false
+    }).addTo(map);
     return null;
 }
 

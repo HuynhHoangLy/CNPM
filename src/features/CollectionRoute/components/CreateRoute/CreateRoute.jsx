@@ -2,17 +2,19 @@ import React from 'react';
 import './styles.css';
 import { CheckCircleIcon, PlusCircleIcon, MapIcon,ChevronDoubleDownIcon, ChevronDoubleUpIcon,XMarkIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
-import OSmap from '../../../../components/Map/OSmap';
 import { useState } from 'react';
 import { getMCP } from '../..';
 import { markerIconRed } from '../../../../components/Map/OSmap';
 import { Marker } from 'react-leaflet';
+import Line from '../../../../components/Map/components/Line';
+import OSmap from '../../../../components/Map/OSmap';
+import { current } from '../../../../components/Map/OSmap';
 
 function CreateRoute({value, setvalue}) {
 
     const heads = ['Thứ tự', 'ID', 'Thao tác'];
     const [mcps, setMCPs] = useState(value != [] ? value.map((ele) => getMCP(ele)) : []);
-
+    const [showLine, setShowLine] = useState(false);
     const handleDelete = (index) => {
         // let temp1 = mcps.map((ele) => {return ele});
         let temp2 = value.map((ele)=> ele);
@@ -50,9 +52,9 @@ return (
                     <CheckCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></CheckCircleIcon>
                     Xác nhận
                 </Link>            
-                <Link className='create-top-button' onClick={ () => {}}>
+                <Link className='create-top-button' onClick={ () => {setShowLine(!showLine)}}>
                     <MapIcon style={{height: '70%', width: '40px', color: 'white'}}></MapIcon>
-                    Tạo Đường
+                    Xem Đường
                 </Link>
                 <Link to='./add' className='create-top-button'>
                     <PlusCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></PlusCircleIcon>
@@ -97,8 +99,11 @@ return (
             <OSmap>
             {
                 value != [] ? value.map((mcp, index) => 
-                    <Marker id={index} icon={markerIconRed} position={mcp}></Marker>
+                    <Marker id={index} position={mcp}></Marker>
                 ) : <></>
+            }
+            {
+                showLine ? <Line points={[current].concat(value)}/>  : (<></>)
             }
             </OSmap>
         </div>
