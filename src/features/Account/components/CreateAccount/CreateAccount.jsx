@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 import logo from '../picture/logo.png';
+import axios from 'axios';
 
 CreateAccount.propTypes = {
     
 };
 
 function CreateAccount(props) {
+
+     const [p, setP] = useState({
+          'name': '',
+          'email': '',
+          'phone': '',
+          'password': '',
+          'role': '',
+     });
+
+     const handleInput = (e) => {
+          setP({...p, [e.target.name]: e.target.event});
+     }
+
+     const headers = {
+          'Content-Type': 'application/json'
+     };
+        
+     const body = JSON.stringify();
+
+     function handleSubmit (event) {
+          event.preventDefault();
+          axios.post('https://localhost7000:/worker/create', body, {headers}, {p})
+          .then(response => console.log(response))
+          .catch(err => console.log(err))
+     }
+
     return (
         <div className='create_account'>
             <div className='create_content'>{'QUẢN LÝ TÀI KHOẢN   >  TẠO TÀI KHOẢN'}</div>
@@ -19,27 +46,27 @@ function CreateAccount(props) {
                          <em className='text-logo-2-mini'>2.0</em>
                     </div>
                </div>
-               <form action="" method="post" id='form'>
+               <form action="" method="post" id='form' onSubmit={handleSubmit}>
                     <ul>
                          <li className='Hoten'>
                               <label htmlFor='name'>Họ và tên</label>
-                              <input type="text" id='name'/>
+                              <input type="text" id='name' onChange={handleInput}/>
                          </li>
                          <li className='Namsinh'> 
-                              <label htmlFor='year_born'>Năm sinh</label>
-                              <input type="date" id='year_born'/>
+                              <label htmlFor='year_born'>Số điện thoại</label>
+                              <input type="text" id='year_born' onChange={handleInput}/>
                          </li>
                          <li className='Email'>
                               <label htmlFor='email'>Email</label>
-                              <input type="email" id='email'/>
+                              <input type="email" id='email' onChange={handleInput}/>
                          </li>
                          <li className='Password'>
                               <label htmlFor='password'>Password</label>
-                              <input type="password" id='password'/>
+                              <input type="password" id='password' onChange={handleInput}/>
                          </li> 
                          <li className='Job'>
                               <label htmlFor='job'>Vai trò</label>
-                              <select name="" id="job">
+                              <select name="" id="job" onChange={handleInput}>
                                    <option value=""></option>
                                    <option value="collector">Collector</option>
                                    <option value="janitor">Janitor</option>

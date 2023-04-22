@@ -36,7 +36,7 @@ function Login({setToken}) {
     return (
         <div className="login">
 			<div id="col-left">
-				<p className="welcome">WELCOME TO...</p>
+				<p className="welcome" style={{width: '1000px', marginLeft: '-24vw'}}>WELCOME TO...</p>
 				<p className="cse">CSE UWC 2.0</p>
 				<p className='content_login'>This website manages urban waste collection (UWC). You only can sign in this website by the account
 					that back officers provide</p>
