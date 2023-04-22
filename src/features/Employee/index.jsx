@@ -15,7 +15,55 @@ TodoEmployee.propTypes = {
 
 function TodoEmployee(props) {
 
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([
+        {
+          "id": 1,
+          "name": "Arne Silcox",
+          "email": "asilcox0@state.gov",
+          "phone": "4121478255",
+          "fCollector": 0,
+          "fJanitor": 1
+        },
+        {
+          "id": 2,
+          "name": "Bernardine Dealey",
+          "email": "bdealey1@java.com",
+          "phone": "2427946209",
+          "fCollector": 0,
+          "fJanitor": 1
+        },
+        {
+          "id": 3,
+          "name": "Saunderson Ferrant",
+          "email": "sferrant2@walmart.com",
+          "phone": "8444986307",
+          "fCollector": 0,
+          "fJanitor": 1
+        },
+        {
+          "id": 4,
+          "name": "Janette Worboy",
+          "email": "jworboy3@princeton.edu",
+          "phone": "5018247340",
+          "fCollector": 0,
+          "fJanitor": 1
+        },
+        {
+          "id": 5,
+          "name": "Hally Marvin",
+          "email": "hmarvin4@uol.com.br",
+          "phone": "1077129681",
+          "fCollector": 0,
+          "fJanitor": 1
+        },
+        {
+          "id": 6,
+          "name": "Perrine Storch",
+          "email": "pstorch5@chron.com",
+          "phone": "7194375348",
+          "fCollector": 0,
+          "fJanitor": 1
+        }]);
 
     useEffect(() => {
         axios
@@ -24,7 +72,7 @@ function TodoEmployee(props) {
                 setUsers(response.data.workers);
             })
             .catch((error) => console.log(error));
-    }, []);
+    }, [users]);
 
     return (
         <div>

@@ -1,6 +1,6 @@
 .login {
     position: relative;
-    padding-top: 20vh;
+    padding-top: 4vh;
     padding-left: 10vw;
     background-color: #212C58;
     height: 100vh;
@@ -8,15 +8,18 @@
 
 #col-left {
     position: relative;
-    top: 5vh;
+    top: 10vh;
     width: 20vw;
     color: #FFF;
 }
 
 .welcome {
+    position: relative;
+    left: -23vw;
     font-size: 22px;
-    padding-bottom: 2vh;
+    padding-bottom: 1vh;
     font-weight: bold;
+    width: 50vw;
 }
 
 .cse {

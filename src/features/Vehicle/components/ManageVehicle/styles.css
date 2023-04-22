@@ -6,12 +6,15 @@
 
 .table-operation {
   display: flex;
-  justify-content: space-around;
-  margin-left: -56px;  
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.head-title {
+.vehicle-head-title {
   background-color: aliceblue;
+  text-align: center;
 }
 
 .detail-button {
@@ -36,16 +39,10 @@
 
 .completedV {
   color: #4CAF50;
-  padding-left: 40px;
 }
 
 .uncompletedV {
   color: #FF3D00;
-  padding-left: 30px;
-}
-
-.headV {
-  padding-left: 25px;
 }
 
 .dataIDV {
@@ -63,3 +60,4 @@
 .dataCapacityV {
   padding-left: 50px;
 }
+

@@ -40,6 +40,7 @@ function TodoFeatures(props) {
                 <Route path='/employee/*' element = {<TodoEmployee/>}/>
                 <Route path='/route/*' element = {<TodoRoute/>}/>
                 <Route path = '/chat' element = {<Chat/>}/>
+                <Route path='/login' element = {<Login/>}/>
                 <Route path='/vehicle/*' element = {<TodoVehicle/>}/>
                 <Route path = "/*" element = {<TodoError/>} />
             </Routes>

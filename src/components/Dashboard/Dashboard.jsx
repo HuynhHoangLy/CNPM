@@ -5,6 +5,7 @@ import GroupP from './picture/GroupP.png';
 import ProfileOctagon from './picture/ProfileOctagon.png';
 import truck from './picture/truck.png';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Dashboard({initBackground}) {
 
@@ -14,7 +15,7 @@ function Dashboard({initBackground}) {
                 <Link to='/account' id='none'>
                     <div
                     className={(initBackground == 1)?'bgColor':'nonbgColor'}
-                    id='first_bg'
+                    id='first_bg' 
                     >
                         <tr className='profileOctagon'>
                             <th scope='row'>

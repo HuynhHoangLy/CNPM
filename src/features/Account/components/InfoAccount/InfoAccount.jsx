@@ -6,7 +6,7 @@ InfoAccount.propTypes = {
     
 };
 
-function InfoAccount(props) {
+function InfoAccount({info}) {
 
     const [check,setCheck] = useState(0);
 

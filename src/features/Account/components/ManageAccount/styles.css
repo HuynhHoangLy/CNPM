@@ -36,31 +36,6 @@
   justify-content: center;
 }
 
-.head-title th {
-  padding-left: 20px;
-}
-
-.dataID {
-  padding-left: 70px;
-}
-
-.dataName {
-  position: relative;
-  left: 15px;
-}
-
-.dataRole {
-  padding-left: 20px;
-}
-
-.dataPhone {
-  padding-left: 25px;
-}
-
-.dataEmail {
-  padding-left: 0px;
-}
-
 .header_manage {
   display: inline-block;
   position: relative;
@@ -120,8 +95,8 @@
 }
 
 .table_manage {
-  position: relative;
+  position: absolute;
   left: 18.7vw;
-  top: -89vh;
+  top: 12vh;
   width: 1200px;
 }
