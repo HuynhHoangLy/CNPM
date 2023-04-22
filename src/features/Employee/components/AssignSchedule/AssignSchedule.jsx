@@ -67,8 +67,7 @@ const events = [
 function WatchCalendar() {
     return (
         <div className="WatchCalendar" style={{display: 'inline-block', position: 'absolute', paddingTop: '80px', marginLeft:'20px'}} >
-            <h1>Lịch làm việc</h1>
-            <Calendar localizer={localizer} events={events} style={{ height: "1000px",width: "1900px", margin: "10px" }} views={['month', 'week']} />
+            <Calendar localizer={localizer} events={events} style={{ height: "100%",width: "100%"}} views={['month', 'week']} />
         </div>
     );
 }
