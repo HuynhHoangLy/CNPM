@@ -9,7 +9,7 @@ import axios from 'axios';
 
 let PageSize = 6;
 
-function ManageAccount({users}) {
+function ManageAccount({users, setData}) {
   
   const heads = ['Mã nhân viên', 'Tên', 'Vai trò', 'Số điện thoại', 'EMAIL', 'Thao tác']
 
@@ -67,15 +67,15 @@ function ManageAccount({users}) {
                 <th style={{width: '15%'}}>{data.email}</th>
                 <th style={{width: '20%'}}>
                   <div className='table-operation'>
-                    <button className='detail-button' style={{border: 'none'}} onClick={togleModal}> 
+                    <Link to={`./info:${data.id}`} className='detail-button' style={{border: 'none'}} onClick={() => setData(data)}> 
                       Chi tiết
-                    </button>
-                    {modal && (
+                    </Link>
+                    {/* {modal && (
                      <div className="modal">
                       <div className="overlay" onClick={togleModal}></div>
-                      {/* <InfoAccount info={data}/> */}
+                      <InfoAccount info={data}/>
                      </div> 
-                    )}
+                    )} */}
                     <div className='delete-button' onClick={() => handleDelete(data.id)}>Xóa</div>
                   </div>
                 </th>

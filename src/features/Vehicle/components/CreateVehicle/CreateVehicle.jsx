@@ -25,7 +25,7 @@ function CreateAccount(props) {
           event.preventDefault();
           console.log(p)
           await axios
-               .get('http://localhost:7000/worker')
+               .get('http://localhost:7000/vehicle')
                .then(res => console.log(res.data.vehicles))
                .catch(err => console.log(err))
 

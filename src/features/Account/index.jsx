@@ -15,6 +15,15 @@ TodoAccount.propTypes = {
 
 function TodoAccount(props) {
 
+    const [data, setData] = useState({
+      "id": 1,
+      "name": "Arne Silcox",
+      "email": "asilcox0@state.gov",
+      "phone": "4121478255",
+      "fCollector": 0,
+      "fJanitor": 1
+    });
+
     const [users, setUsers] = useState([
         {
           "id": 1,
@@ -79,9 +88,9 @@ function TodoAccount(props) {
             <Header/>
             <Dashboard initBackground={1}/>
             <Routes>
-                <Route path='/' exact element = {<ManageAccount users={users}/>}/>
+                <Route path='/' exact element = {<ManageAccount users={users} setData={setData}/>}/>
                 <Route path='/create' element = {<CreateAccount/>}/>
-                <Route path='/info' element = {<InfoAccount/>}/>
+                <Route path={`/info:${data.id}`} element = {<InfoAccount info={data}/>}/>
                 <Route path='/*' element = {<TodoError/>} />                
             </Routes>
         </div>

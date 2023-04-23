@@ -3,10 +3,11 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import Todopagination from '../../../../components/Page/index';
 import { useState, useMemo } from 'react';
+import axios from 'axios';
 
 let PageSize = 6;
 
-function ManageVehicle({vehicle}) {
+function ManageVehicle({vehicle, setData}) {
 
   const heads = ['Mã số xe', 'Loại xe', 'Sức chứa', 'Tiêu thụ xăng', 'Tình trạng', 'Thao tác']
   
@@ -17,6 +18,13 @@ function ManageVehicle({vehicle}) {
     const lastPageIndex = firstPageIndex + PageSize;
     return (vehicle.slice(firstPageIndex, lastPageIndex));
   }, [currentPage]);
+
+  function handleDelete(e) {
+    axios
+      .delete(`http://localhost:7000/vehicle/${e}`)
+      .then(response => console.log(response))
+      .catch((error) => console.log(error))
+  }
 
   return (
 
@@ -50,8 +58,10 @@ function ManageVehicle({vehicle}) {
                 {data.status === 'GOOD' ? <th className='completedV' style={{width: '15%'}}>{data.status}</th> : <th className='uncompletedV' style={{width: '15%'}}>{data.status}</th>}
                 <th style={{width: '25%'}}>
                   <div className='table-operation'>
-                    <div className='detail-button'>Chi tiết</div>
-                    <div className='delete-button'>Xóa</div>
+                    <Link to={`./info:${data.id}`} className='detail-button' style={{border: 'none'}} onClick={() => setData(data)}>
+                      Chi tiết
+                    </Link>
+                    <div className='delete-button' onClick={() => handleDelete(data.id)}>Xóa</div>
                   </div>
                 </th>
               </tr>

@@ -15,6 +15,15 @@ TodoVehicle.propTypes = {
 
 function TodoVehicle(props) {
 
+    const [data, setData] = useState({
+      "id": 1,
+      "carNumber": "0781-7066",
+      "type": "TRUCK",
+      "status": "BROKEN",
+      "weight": 11.68,
+      "fuelConsumption": 11.75
+    });
+
     const [vehicle, setVehicle] = useState([{
         "id": 1,
         "carNumber": "0781-7066",
@@ -79,8 +88,7 @@ function TodoVehicle(props) {
             <Dashboard initBackground={4}/>
             <Routes>
                 <Route path='/' exact element = {<MananageVihicle vehicle={vehicle}/>}/>
-                <Route path='/manage' element = {<MananageVihicle/>}/>
-                <Route path='/info' element = {<InfoVehicle/>}/>
+                <Route path={`/info:${data.id}`} element = {<InfoVehicle vehicle={data}/>}/>
                 <Route path='/create' element = {<CreateVehicle/>}/>
                 <Route path='*' element = {<TodoError/>} />
             </Routes>

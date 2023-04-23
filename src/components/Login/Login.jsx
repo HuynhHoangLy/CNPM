@@ -8,7 +8,7 @@ Login.propTypes = {
 };
 
 async function loginUser(credentials) {
-	return fetch('http://localhost:7000/auth/login', {
+	return await fetch('http://localhost:7000/auth/login', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
