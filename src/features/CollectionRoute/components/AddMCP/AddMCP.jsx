@@ -5,37 +5,38 @@ import { Link } from 'react-router-dom';
 import OSmap from '../../../../components/Map/OSmap';
 import { Marker } from 'react-leaflet';
 import { useState } from 'react';
-import { markerIconRed, markerIconRedBold } from '../../../../components/Map/OSmap';
+import { markerIconRed, markerIconBlue } from '../../../../components/Map/OSmap';
+import { data } from '../../../../components/Data/data';
 
 function AddMCP({value, setvalue}) {
-    const mcps = [
-        [10.881910, 106.804845], 
-        [10.876739, 106.802029], 
-        [10.875483, 106.799275], 
-        [10.871069, 106.802225],
-        [10.881069, 106.803525],
-        [10.870109, 106.802225],
-        [10.882739, 106.702225]
-    ]
+    // const mcps = [
+    //     [10.881910, 106.804845], 
+    //     [10.876739, 106.802029], 
+    //     [10.875483, 106.799275], 
+    //     [10.871069, 106.802225],
+    //     [10.881069, 106.803525],
+    //     [10.870109, 106.802225],
+    //     [10.882739, 106.702225]
+    // ]
 
-    const [marker, setMarker] = useState(mcps.map((ele) => {
-        if(value.find((v) => v[0] == ele[0] && v[1]==ele[1]) != undefined)
-            return markerIconRedBold;
-        else return markerIconRed;
+    const [marker, setMarker] = useState(data.mcps.map((ele) => {
+        if(value.find((v) => v.coor[0] == ele.coor[0] && v.coor[1]==ele.coor[1]) != undefined)
+            return markerIconRed;
+        else return markerIconBlue;
     }))
     const [chosenMCPs, setChosenMCPs] = useState(value);
     
     const handleChooseMCP = (point, index) => {
         let tempMCP = chosenMCPs.map((x) => x);
         let tempMarker = marker.map((x) => x);
-        const i = tempMCP.find((ele) => (ele[0] == point[0] && ele[1] == point[1]));
+        const i = tempMCP.find((ele) => (ele.coor[0] == point.coor[0] && ele.coor[1] == point.coor[1]));
         if (i == undefined) {
             tempMCP.push(point);
-            tempMarker[index] = markerIconRedBold;
+            tempMarker[index] = markerIconRed;
         } 
         else {
             tempMCP.splice(i,1);
-            tempMarker[index] = markerIconRed;
+            tempMarker[index] = markerIconBlue;
         }
         setMarker(tempMarker);
         setChosenMCPs(tempMCP);
@@ -53,8 +54,8 @@ function AddMCP({value, setvalue}) {
             <div className='addmcp-map-flexbox'>
                 <OSmap>
                 {
-                    mcps != undefined ? mcps.map((mcp, index) => 
-                        <Marker id={index} icon={marker[index]} position={mcp} 
+                    data.mcps != [] ? data.mcps.map((mcp, index) => 
+                        <Marker id={index} icon={marker[index]} position={mcp.coor} 
                                 eventHandlers={{click: () => {handleChooseMCP(mcp,index)}}}>
                         </Marker>
                     ) : <></>

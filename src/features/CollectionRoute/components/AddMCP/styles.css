@@ -23,6 +23,10 @@
       color: white;
       text-decoration: none;
     }
+
+    .addmcp-top-button:hover{
+      color: white;
+    }
   
     .addmcp-flexbox-topbutton {
       width: 90%;

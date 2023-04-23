@@ -30,6 +30,9 @@
     border-radius: 1vb;
   }
 
+  .create-top-button:hover{
+    color: white;
+  }
   .create-top-button {
     background-color: #3a5ac0;
     width: 150px;
@@ -44,6 +47,7 @@
     font-size: 18px;
     color: white;
     text-decoration: none;
+
   }
 
 .create-flexbox-topbutton {

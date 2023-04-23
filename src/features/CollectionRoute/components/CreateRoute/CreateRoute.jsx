@@ -4,11 +4,13 @@ import { CheckCircleIcon, PlusCircleIcon, MapIcon,ChevronDoubleDownIcon, Chevron
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { getMCP } from '../..';
-import { markerIconRed } from '../../../../components/Map/OSmap';
+import { markerIconRed, markerIconBlue, markerIconGreen } from '../../../../components/Map/OSmap';
 import { Marker } from 'react-leaflet';
 import Line from '../../../../components/Map/components/Line';
 import OSmap from '../../../../components/Map/OSmap';
 import { current } from '../../../../components/Map/OSmap';
+import { Popup } from 'react-leaflet';
+import { data, getNewRouteID } from '../../../../components/Data/data';
 
 function CreateRoute({value, setvalue}) {
 
@@ -48,11 +50,11 @@ return (
     <div style={{display: 'inline-block', position: 'absolute', paddingTop: '80px', width: '85vw', marginLeft:'20px', height: '170vh'}} id='info_size'>
         <div className='create-flexbox-main'>
             <div className='create-flexbox-topbutton'>
-                <Link to='../' className='create-top-button' onClick={ () => {}}>
+                <Link to='../'  className='create-top-button' onClick={ () => {if(value.length != 0) data.routes.push({'mcps' : value, 'dist': 10, 'collectors': 0, id: getNewRouteID()}); setvalue([])}}>
                     <CheckCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></CheckCircleIcon>
                     Xác nhận
                 </Link>            
-                <Link className='create-top-button' onClick={ () => {setShowLine(!showLine)}}>
+                <Link className='create-top-button' onClick={ () => {setShowLine(true)}}>
                     <MapIcon style={{height: '70%', width: '40px', color: 'white'}}></MapIcon>
                     Xem Đường
                 </Link>
@@ -68,10 +70,10 @@ return (
             </tr>
             </thead>
             <tbody style={{backgroundColor: '#f6f6f6'}}>
-            {value.map((data, index) =>
+            {value.map((dat, index) =>
                 <tr className='' key={index}>
                     <th style={{width: '15%'}}>{index+1}</th>
-                    <th style={{width: '15%'}}>{getMCP(data).ID}</th>
+                    <th style={{width: '15%'}}>{dat.id}</th>
                     <th style={{width: '70%'}} >
                         { data === null ? null :
                         <div className='create-table-operation-flexbox'>
@@ -99,11 +101,16 @@ return (
             <OSmap>
             {
                 value != [] ? value.map((mcp, index) => 
-                    <Marker id={index} position={mcp}></Marker>
+                    <Marker id={index} position={mcp.coor} icon={markerIconBlue}></Marker>
                 ) : <></>
             }
+            <Marker position={current} center={true} icon={markerIconRed}>
+                <Popup > 
+                    <b>Hello I'm here</b>
+                </Popup>
+            </Marker>
             {
-                showLine ? <Line points={[current].concat(value)}/>  : (<></>)
+                showLine ? <Line points={[current].concat(value.map((x) => x.coor))}/>  : (<></>)
             }
             </OSmap>
         </div>

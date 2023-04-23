@@ -2,38 +2,18 @@ import React from 'react';
 import './styles.css';
 import { PlusCircleIcon, ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
+import { text } from '@fortawesome/fontawesome-svg-core';
+import { data } from '../../../../components/Data/data';
 
-function ManageRoute() {
+function ManageRoute(value, setValue) {
 
     const heads = ['ID', 'Collector', 'Số MCP', 'Quãng đường', 'Thao tác']
-    const datas = [
-        {
-        'ID': "02",
-        'NumCollectors': "2",
-        'NumMCPs': "5",
-        'Distance': "12"
-        },
-        {
-        'ID': "02",
-        'NumCollectors': "2",
-        'NumMCPs': "5",
-        'Distance': "13"
-        },
-        {
-        'ID': "02",
-        'NumCollectors': "2",
-        'NumMCPs': "5",
-        'Distance': "12"
-        },
-        {},
-        {},
-        {}
-]
+    const datas = data.routes.map((x) => x)
 
 return (
     <div style={{display: 'inline-block', position: 'absolute', paddingTop: '80px', width: '84.1vw', marginLeft:'4vw', height: '100vh'}} id='info_size'>
         <div className='flexbox-main'>
-            <div className='flexbox-topbutton'>
+            <div className='flexbox-top-button'>
                 <Link to='./create' className='add-button'>
                     <PlusCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></PlusCircleIcon>
                     Thêm
@@ -41,20 +21,22 @@ return (
             </div>
             <table className='table-route'>
                 <thead>
-                    <tr className='head-title'>
-                        {heads.map((head, headID) => <th key={headID} style={{paddingLeft: '3.1vw'}}>{head}</th>)}
+                    <tr style={{textAlign: 'center'}} className='manage-head-title'>
+                        {heads.map((head, headID) => <th key={headID}>{head}</th>)}
                     </tr>
                 </thead>
                 <tbody style={{backgroundColor: '#f2f2f2'}}>
-                    {datas.map((data, index) =>
-                        <tr className='' key={index}>
-                            <th style={{paddingLeft: '3.2vw'}}>{data.ID}</th>
-                            <th style={{paddingLeft: '4.8vw'}}>{data.NumCollectors}</th>
-                            <th style={{paddingLeft: '4.8vw'}}>{data.NumMCPs}</th>
-                            <th style={{paddingLeft: '6vw'}}>{data.Distance}</th>
-                            <th>
-                                <div className='table-operation'>
-                                <div className='justify-button'>Chỉnh sửa</div>
+                    {datas.map((dat, index) =>
+                        <tr className='' style={{textAlign: 'center'}} key={index}>
+                            <th style={{width: '20%'}}>{dat.id}</th>
+                            <th style={{width: '20%'}}>{dat.collectors}</th>
+                            <th style={{width: '20%'}}>{dat.mcps.length}</th>
+                            <th style={{width: '20%'}}>{dat.dist}</th>
+                            <th style={{width: '20%'}}>
+                                <div className='manage-table-operation'>
+                                  
+                                <Link to='./create' className='justify-button' onClick={() => {setValue(data.routes.find((ele) => { return ele.id == dat.id} ).mcps)}}>Chỉnh sửa</Link>
+                                
                                 </div>
                             </th>
                         </tr>

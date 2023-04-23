@@ -31,7 +31,7 @@ function TodoRoute(props) {
             <div style={{paddingLeft: '180px'}}>
                 <Routes>
                     <Route path='/' exact element = {<ManageRoute/>}/>
-                    <Route path='/manage' exact element = {<ManageRoute/>}/>
+                    <Route path='/manage' exact element = {<ManageRoute value={mcpList} setvalue={setMcpList}/>}/>
                     <Route path='/create' exact element = {<CreateRoute value={mcpList} setvalue={setMcpList}/>}/>
                     <Route path='/create/add' exact element = {<AddMCP value={mcpList} setvalue={setMcpList}/>}/>
                     <Route path='*' element = {<TodoError/>} />

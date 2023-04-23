@@ -4,6 +4,8 @@ import L from 'leaflet';
 import 'leaflet-routing-machine';
 import { useMap } from 'react-leaflet';
 import './styles.css';
+import { current } from '../OSmap';
+import { markerIconBlue, markerIconRed} from '../OSmap';
 
 Line.propTypes = {
     
@@ -30,7 +32,8 @@ function Line({points}) {
         addWaypoints: false,
         draggableWaypoints: false,
         fitSelectedRoutes: true,
-        showAlternatives: false
+        showAlternatives: false,
+        createMarker: function() {return null}
     }).addTo(map);
     return null;
 }

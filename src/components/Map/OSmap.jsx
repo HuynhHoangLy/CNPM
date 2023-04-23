@@ -16,14 +16,21 @@ const markerIcon = new L.Icon({
 })
 
 export const markerIconRed = new L.Icon({
-    iconUrl: require("./picture/location-pin-normal.png"),
+    iconUrl: require("./picture/red.png"),
     iconSize: [35,40],
     iconAnchor: [17,46],
     popupAnchor: [0,-46],
 })
 
-export const markerIconRedBold = new L.Icon({
-    iconUrl: require("./picture/location-pin-bold.png"),
+export const markerIconGreen = new L.Icon({
+    iconUrl: require("./picture/green.png"),
+    iconSize: [35,40],
+    iconAnchor: [17,46],
+    popupAnchor: [0,-46],
+})
+
+export const markerIconBlue = new L.Icon({
+    iconUrl: require("./picture/blue.png"),
     iconSize: [35,40],
     iconAnchor: [17,46],
     popupAnchor: [0,-46],
@@ -44,11 +51,6 @@ export default function OSmap({children}) {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position = {position} center = {true}>
-                <Popup > 
-                    <b>Hello I'm here</b>
-                </Popup>
-            </Marker>
             {children}
         </MapContainer>
     )

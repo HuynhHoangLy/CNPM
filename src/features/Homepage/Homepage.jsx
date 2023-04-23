@@ -5,21 +5,15 @@ import Info from '../../components/Info/index';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import OSmap from '../../components/Map/OSmap';
 import { Marker } from 'react-leaflet';
+import { data } from '../../components/Data/data';
+import { markerIconGreen, markerIconBlue, markerIconRed } from '../../components/Map/OSmap';
 
 Homepage.propTypes = {
   
 };
 
 function Homepage(props) {
-  const points = [
-    [10.881910, 106.804845], 
-    [10.876739, 106.802029], 
-    [10.875483, 106.799275], 
-    [10.871069, 106.802225],
-    [10.881069, 106.803525],
-    [10.870109, 106.802225],
-    [10.882739, 106.702225]
-];
+  const points = data.mcps.map((x) => x);
   return (
     <div>
       <Header/>
@@ -29,7 +23,7 @@ function Homepage(props) {
         <OSmap>
             {
                 points != [] ? points.map((mcp, index) => 
-                    <Marker id={index} position={mcp}></Marker>
+                    <Marker id={index} position={mcp.coor} icon={mcp.status == 100 ? markerIconRed : markerIconGreen}></Marker>
                 ) : <></>
             }
         </OSmap>
