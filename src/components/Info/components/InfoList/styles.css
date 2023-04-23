@@ -1,0 +1,14 @@
+.info-list {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    padding: 0;
+    width: 81vw;
+    left: 19vw;
+    top: 11vh;
+}
+
+.info-list li {
+    padding: 0 0.6vw;
+}

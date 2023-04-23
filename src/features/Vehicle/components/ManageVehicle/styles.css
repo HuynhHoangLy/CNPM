@@ -1,0 +1,63 @@
+.tableM {
+  height: calc(100vh - var(--height-nav) - 1vh);
+  margin-left: 10px;
+  width: 1200px;
+}
+
+.table-operation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.vehicle-head-title {
+  background-color: aliceblue;
+  text-align: center;
+}
+
+.detail-button {
+  background-color: #7D8EC4;
+  color: #333;
+  width: 80px;
+  height: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-button {
+  background-color: #D65E5E;
+  color: #fff;
+  width: 80px;
+  height: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.completedV {
+  color: #4CAF50;
+}
+
+.uncompletedV {
+  color: #FF3D00;
+}
+
+.dataIDV {
+  padding-left: 20px;
+}
+
+.dataNameV {
+  padding-left: 20px;
+}
+
+.dataNowV {
+  padding-left: 35px;
+}
+
+.dataCapacityV {
+  padding-left: 50px;
+}
+

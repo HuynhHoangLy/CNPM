@@ -1,0 +1,45 @@
+.tableM {
+  /* width: 1200px; */
+  height: calc(100vh - var(--height-nav) - 1vh);
+  margin-left: 10px;
+  width: 1200px;
+}
+
+.table-operation {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -40px;  
+}
+
+.employee-head-title {
+  background-color: aliceblue;
+  text-align: center;
+}
+
+.detail-button {
+  background-color: #7D8EC4;
+  color: #333;
+  width: 80px;
+  height: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-button {
+  background-color: #D65E5E;
+  color: #fff;
+  width: 80px;
+  height: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.completed {
+  color: #4CAF50;
+}
+
+.uncompleted {
+  color: #FF3D00;
+}

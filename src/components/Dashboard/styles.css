@@ -14,10 +14,11 @@ body {
 }
 
 .dashboard {
+    display: inline-block;
+    margin-top: 10.2vh;
     position: relative;
-    height: calc(100vh - var(--height-nav) - 1vh);
-    top: -2.5vh;
-    width: var(--width-nav);
+    height: calc(100vh - var(--height-nav) - 1.3vh);
+    width: calc(var(--width-nav) + 1vw);
     border-radius: 30px;
     border: 1.6px solid rgba(0, 0, 0, 0.14);
 }
@@ -26,15 +27,31 @@ table.table {
     border-collapse: collapse;
 }
 
+#none {
+    text-decoration: none;
+    color: #000;
+}
+
 tr, th, td {
     height: 10vh;
-    border-bottom: solid rgba(0, 0, 0, 0.14);
+    position: relative;
 }
 
 tr.profileOctagon, tr.groupP, tr.delete, tr.truck{
     width: 1vw;
     padding: 10px 2px;
     cursor: pointer;
+    position: relative;
+    border-bottom: solid rgba(0, 0, 0, 0.14);
+}
+
+tr.profileOctagon {
+    bottom: 1.5vh;
+}
+
+tr.truck {
+    top: 0.4vh;
+    left: -1vh;
 }
 
 tr.profileOctagon:hover {
@@ -56,36 +73,68 @@ tr.truck:hover {
 th img {
     margin-left: 1vw;
     margin-right: 2.5vw;
+    position: relative;
+    top: 2vh;
 }
 
-td {
+td#manage_account, td#manage_employee, td#manage_route, td#manage_vehicle {
     font-family: none;
     font-weight: 900;
     font-size: 18px;
 }
 
 #first_icon {
-    padding-top: 20px;
+    margin-top: -30px;
+}
+
+#second_icon {
+    margin-top: -35px;
+}
+
+#third_icon {
+    margin-top: -20px;
 }
 
 #final_icon {
     padding-bottom: 0.05vh;
     padding-left: 0.5vw;
+    margin-top: -20px;
 }
 
 #manage_account {
-    padding-top: 2.6vh;
+    position: relative;
+    top: 0.2vh;
+    width: 12vw;
+    padding-top: 35px;
 }
 
 #manage_employee {
-    padding-bottom: 0.6vh;
+    width: 12vw;
+    padding-top: 25px;
 }
 
 #manage_route {
-
+    position: relative;
+    bottom: 0.8vh;
+    padding-top: 15px;
 }
 
 #manage_vehicle {
-    padding-top: 0.2vh;
+    position: relative;
+    bottom: -1vh;
+    width: 12vw;
+    padding-top: 15px;
 }
 
+.bgColor {
+    background-color: rgba(68, 73, 80, 0.15);
+}
+
+.non {
+    background-color: none;
+}
+
+#first_bg {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}

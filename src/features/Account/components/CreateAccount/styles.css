@@ -1,0 +1,98 @@
+.create_account {
+    position: absolute;
+    top: 12vh;
+    left: 20vw;
+}
+
+.create_content {
+    position: relative;
+    font-size: 20px;
+    top: 1vh;
+    color: #D65E5E;
+    font-weight: bold;
+}
+
+.border_create {
+    position: relative;
+    border-radius: 30px;
+    border: 1.6px solid rgba(0, 0, 0, 0.14);
+    height: 69vh;
+    width: 27vw;
+    top: 6vh;
+    left: 23vw;
+    box-shadow: 5px 5px 5px #AAA;
+}
+
+.header-left_mini {
+    width: 27vw;
+    margin-left: 8vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.logo_mini img{
+    height: 40px;
+    width: auto;
+    padding-right: 14px;
+    position: relative;
+    top: -5px;
+}
+
+.text-logo-mini {
+    width: 7vw;
+    display: inline-block;
+}
+
+.text-logo-mini em {
+    font-size: 30px;
+    font-style: normal;
+    padding-right: 8px;
+    font-weight: 700;
+}
+
+.text-logo-2-mini {
+    color: #E45F2B;
+}
+
+#form {
+    padding-left: 1.8vw;
+}
+
+.Hoten, .Namsinh, .Email, .Password, .Job, .ID {
+    list-style-type: none;
+    padding-bottom: 2vh;
+    margin-left: -3vh;
+}
+
+li label {
+    color: #50544A;
+}
+
+#name, #year_born, #email, #job, #password, #id_number {
+    position: relative;
+    display: block;
+    margin-top: 0.7vh;
+    width: 22.6vw;
+    height: 4vh;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    border: 1.6px solid rgba(0, 0, 0, 0.14);
+    padding-left: 10px;
+}
+
+.submit {
+    margin-top: -1vh;
+    margin-left: 7vw;
+    height: 4vh;
+    width: 10vw;
+    border-radius: 10px;
+    background-color: #D65E5E;
+    font-size: 15px;
+    font-weight: 700;
+    border: 1.6px solid rgba(0, 0, 0, 0.14);
+}
+
+.submit:hover {
+    box-shadow: 2px 2px 2px #AAA;
+    cursor: pointer;
+}
