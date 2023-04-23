@@ -72,7 +72,7 @@ function TodoEmployee(props) {
                 setUsers(response.data.workers);
             })
             .catch((error) => console.log(error));
-    }, [users]);
+    }, []);
 
     return (
         <div>
