@@ -10,12 +10,10 @@ import { markerIconBlue, markerIconRed} from '../OSmap';
 Line.propTypes = {
     
 };
-let line = null;
-
+export let line = null;
+export let d = 0;
 function Line({points}) {
     const map = useMap();
-
-    console.log(points)
     if(line != null) map.removeControl(line);
 
     line = L.Routing.control({
@@ -35,6 +33,10 @@ function Line({points}) {
         showAlternatives: false,
         createMarker: function() {return null}
     }).addTo(map);
+    line.on('routesfound', function(e) {
+        d = e.routes[0].summary.totalDistance
+        console.log(e.routes[0].summary.totalDistance)
+     });
     return null;
 }
 

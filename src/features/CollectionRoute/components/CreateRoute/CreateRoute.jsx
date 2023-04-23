@@ -11,12 +11,13 @@ import OSmap from '../../../../components/Map/OSmap';
 import { current } from '../../../../components/Map/OSmap';
 import { Popup } from 'react-leaflet';
 import { data, getNewRouteID } from '../../../../components/Data/data';
+import {d} from '../../../../components/Map/components/Line';
 
 function CreateRoute({value, setvalue}) {
-
     const heads = ['Thứ tự', 'ID', 'Thao tác'];
     const [mcps, setMCPs] = useState(value != [] ? value.map((ele) => getMCP(ele)) : []);
     const [showLine, setShowLine] = useState(false);
+
     const handleDelete = (index) => {
         // let temp1 = mcps.map((ele) => {return ele});
         let temp2 = value.map((ele)=> ele);
@@ -50,7 +51,7 @@ return (
     <div style={{display: 'inline-block', position: 'absolute', paddingTop: '80px', width: '85vw', marginLeft:'20px', height: '170vh'}} id='info_size'>
         <div className='create-flexbox-main'>
             <div className='create-flexbox-topbutton'>
-                <Link to='../'  className='create-top-button' onClick={ () => {if(value.length != 0) data.routes.push({'mcps' : value, 'dist': 10, 'collectors': 0, id: getNewRouteID()}); setvalue([])}}>
+                <Link to='../'  className='create-top-button' onClick={ () => {if(value.length != 0) data.routes.push({'mcps' : value, 'dist': Math.round(d/100)/10, 'collectors': 0, id: getNewRouteID()}); setvalue([])}}>
                     <CheckCircleIcon style={{height: '70%', width: '40px', color: 'white'}}></CheckCircleIcon>
                     Xác nhận
                 </Link>            
@@ -77,7 +78,6 @@ return (
                     <th style={{width: '70%'}} >
                         { data === null ? null :
                         <div className='create-table-operation-flexbox'>
-                            <div className='create-justify-button' style={{backgroundColor: '#ffff4d'}}>Thông tin</div>
                             <div className='create-justify-button' onClick={() => handleMoveUp(index)}>
                                 <ChevronDoubleUpIcon style={{height: '70%', width: '40px', color: 'black'}}></ChevronDoubleUpIcon>
                             </div>

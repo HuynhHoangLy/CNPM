@@ -58,6 +58,11 @@
   .flexbox-top-button:hover{
     color: white;
   }
+
+.add-button:hover{
+  color: white;
+}
+
   .flexbox-top-button {
     width: 90%;
     height: 8%;
