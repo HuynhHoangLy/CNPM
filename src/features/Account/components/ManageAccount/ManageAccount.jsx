@@ -5,6 +5,7 @@ import Todopagination from '../../../../components/Page/index';
 import { useState, useMemo } from 'react';
 import InfoAccount from '../InfoAccount/InfoAccount';
 import '../../../../components/styles.css';
+import axios from 'axios';
 
 let PageSize = 6;
 
@@ -24,6 +25,13 @@ function ManageAccount({users}) {
   const togleModal = () => {
     setModal(!modal);
   };
+
+  function handleDelete(e) {
+    axios
+      .delete(`http://localhost:7000/worker/${e}`)
+      .then(response => console.log(response))
+      .catch((error) => console.log(error))
+  }
 
   if(modal) document.body.classList.add('active-modal')
   else document.body.classList.remove('active-modal')
@@ -50,8 +58,8 @@ function ManageAccount({users}) {
             </tr>
           </thead>
           <tbody>
-            {currentTableData.map((data, index) =>
-              <tr id='manage_account' style={{textAlign: 'center'}} key={index}>
+            {currentTableData.map((data) =>
+              <tr id='manage_account' style={{textAlign: 'center'}} key={data.id}>
                 <th style={{width: '15%'}}>{data.id}</th>
                 <th style={{width: '20%'}}>{data.name}</th>
                 <th style={{width: '15%'}}>{data.fCollector === 1 ? 'Collector' : 'Janitor'}</th>
@@ -68,7 +76,7 @@ function ManageAccount({users}) {
                       {/* <InfoAccount info={data}/> */}
                      </div> 
                     )}
-                    <div className='delete-button'>Xóa</div>
+                    <div className='delete-button' onClick={() => handleDelete(data.id)}>Xóa</div>
                   </div>
                 </th>
               </tr>

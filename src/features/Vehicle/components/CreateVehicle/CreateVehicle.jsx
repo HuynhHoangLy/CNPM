@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './styles.css';
 import logo from '../picture/logo.png';
 import axios from 'axios';
 
@@ -11,11 +10,11 @@ CreateAccount.propTypes = {
 function CreateAccount(props) {
 
      const [p, setP] = useState({
-          name: '',
-          email: '',
-          phone: '',
-          password: '',
-          role: '',
+          vehicleNumber: '',
+          type: '',
+          status: '',
+          weight: '',
+          fuelConsumption: '',
      });
 
      const handleInput = (e) => {
@@ -27,10 +26,10 @@ function CreateAccount(props) {
           console.log(p)
           await axios
                .get('http://localhost:7000/worker')
-               .then(res => console.log(res.data.workers))
+               .then(res => console.log(res.data.vehicles))
                .catch(err => console.log(err))
 
-          return await fetch('http://localhost:7000/worker/create', {
+          return await fetch('http://localhost:7000/vehicle/create', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json'
@@ -42,7 +41,7 @@ function CreateAccount(props) {
 
     return (
         <div className='create_account'>
-            <div className='create_content'>{'QUẢN LÝ TÀI KHOẢN   >  TẠO TÀI KHOẢN'}</div>
+            <div className='create_content'>{'QUẢN LÝ PHƯƠNG TIỆN   >  THÊM PHƯƠNG TIỆN'}</div>
             <div className='border_create'>
                <div className='header-left_mini'>
                     <em className='logo_mini'><img src={logo} alt='Not found'/></em>
@@ -54,31 +53,31 @@ function CreateAccount(props) {
                <form action="" method="post" id='form' onSubmit={handleSubmit}>
                     <ul>
                          <li className='Hoten'>
-                              <label htmlFor='name'>Họ và tên</label>
+                              <label htmlFor='name'>Mã số xe</label>
                               <input type="text" id='name' name="name" onChange={handleInput}/>
                          </li>
                          <li className='Namsinh'> 
-                              <label htmlFor='year_born'>Số điện thoại</label>
+                              <label htmlFor='year_born'>Loại xe</label>
                               <input type="text" id='year_born' name="phone" onChange={handleInput}/>
                          </li>
                          <li className='Email'>
-                              <label htmlFor='email'>Email</label>
-                              <input type="email" id='email' name="email" onChange={handleInput}/>
+                              <label htmlFor='email'>Sức chứa</label>
+                              <input type="text" id='email' name="email" onChange={handleInput}/>
                          </li>
                          <li className='Password'>
-                              <label htmlFor='password'>Password</label>
+                              <label htmlFor='password'>Tiêu thụ xăng</label>
                               <input type="password" id='password' name="password" onChange={handleInput}/>
                          </li> 
                          <li className='Job'>
-                              <label htmlFor='job'>Vai trò</label>
+                              <label htmlFor='job'>Tình trạng</label>
                               <select name="role" id="job" onChange={handleInput}>
                                    <option value=""></option>
-                                   <option value="collector">Collector</option>
-                                   <option value="janitor">Janitor</option>
+                                   <option value="collector">GOOD</option>
+                                   <option value="janitor">BROKEN</option>
                               </select>
                          </li>
                     </ul>
-                    <button type='submit' className='submit'>Tạo tài khoản</button>
+                    <button type='submit' className='submit'>Thêm phương tiện</button>
                </form> 
             </div>
         </div>

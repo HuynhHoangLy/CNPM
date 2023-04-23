@@ -36,6 +36,10 @@
   justify-content: center;
 }
 
+.delete-button:hover {
+  cursor: pointer;
+}
+
 .header_manage {
   display: inline-block;
   position: relative;

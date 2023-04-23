@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import InfoVehicle from './components/InfoVehicle/InfoVehicle';
 import MananageVihicle from './components/ManageVehicle/ManageVehicle';
+import CreateVehicle from './components/CreateVehicle/CreateVehicle';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TodoError from '../Error';
 import axios from 'axios';
@@ -70,7 +71,7 @@ function TodoVehicle(props) {
                 setVehicle(response.data.vehicles);
             })
             .catch((error) => console.log(error));
-    }, [vehicle]);    
+    }, []);    
 
     return (
         <div>
@@ -80,6 +81,7 @@ function TodoVehicle(props) {
                 <Route path='/' exact element = {<MananageVihicle vehicle={vehicle}/>}/>
                 <Route path='/manage' element = {<MananageVihicle/>}/>
                 <Route path='/info' element = {<InfoVehicle/>}/>
+                <Route path='/create' element = {<CreateVehicle/>}/>
                 <Route path='*' element = {<TodoError/>} />
             </Routes>
         </div>
